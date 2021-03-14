@@ -1,0 +1,15 @@
+name: QuackSaftey
+version: ${project.version}
+main: com.hicupalot.quacksaftey.QuackSaftey
+api-version: 1.16
+authors: [hicupalot]
+description: The Plugin to Keep Players Safe
+
+commands:
+  didibreakit:
+    description: Tells you if you really messed it up
+    usage: /didibreakit
+    permission: quacksaftey.doesitwork
+  barrier:
+    description: Gives you a barrier
+    usage: /barrier
