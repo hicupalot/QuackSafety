@@ -7,7 +7,7 @@ public final class QuackSaftey extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        System.out.println(ChatColor.GREEN + "[QuackSaftey] QuackSaftey plugin initiated");
+        System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey plugin initiated");
         this.getCommand("didibreakit").setExecutor(new plugintest());
         this.getCommand("barrier").setExecutor(new barriergiver());
     }

@@ -14,7 +14,7 @@ public class barriergiver implements CommandExecutor {
             Player player = (Player) sender;
             PlayerInventory inventory = player.getInventory();
             inventory.addItem(new ItemStack(Material.BARRIER));
-            sender.sendMessage(ChatColor.GOLD+"You have been given a Barrier");
+            sender.sendMessage(ChatColor.GOLD+"[QUACK] You have been given a Barrier");
             return true;
         }
         return false;
