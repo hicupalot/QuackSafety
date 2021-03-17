@@ -11,10 +11,15 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.permissions.Permission;
 //Need to Fix Permissions
 public class plugintest implements CommandExecutor{
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("quacksaftey.doesitwork"));
-        sender.sendMessage("You didn't break it Hicup!");
-       return true;
-    }
+        public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+             if (sender.hasPermission("quacksaftey.doesitwork")) {
+                 sender.sendMessage(ChatColor.RED+"[QUACKSAFETY] You haven't broken it Hicup!");
+            }
+            else {
+                sender.sendMessage(ChatColor.RED +"[QUACKSAFETY] You do not have permission to run that command");
+            }
+            return true;
 
-}
+        }
+
+    }
