@@ -17,3 +17,7 @@ commands:
     description: Shows you the colour codes
     usage: /colourcodes
     permission: quacksaftey.colour
+  discord:
+    description: gives you the Quacktopia Discord Link
+    usage: /discord
+    permission: quacksaftey.discord
