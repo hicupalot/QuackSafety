@@ -22,3 +22,8 @@ commands:
     description: gives you the Quacktopia Discord Link
     usage: /discord
     permission: quacksaftey.discord
+  feedback:
+    description: Gives the feedback website
+    usage: /feedback
+    permission: quacksaftey.feedback
+    aliases: suggestions, bugs

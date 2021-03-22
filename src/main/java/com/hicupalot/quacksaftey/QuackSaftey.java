@@ -12,6 +12,7 @@ public final class QuackSaftey extends JavaPlugin {
         this.getCommand("barrier").setExecutor(new barriergiver());
         this.getCommand("colourcodes").setExecutor(new colour());
         this.getCommand("discord").setExecutor(new discord());
+        this.getCommand("feedback").setExecutor(new feedback());
     }
 
     @Override
