@@ -10,6 +10,7 @@ public final class QuackSaftey extends JavaPlugin {
         System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey plugin initiated");
         this.getCommand("didibreakit").setExecutor(new plugintest());
         this.getCommand("barrier").setExecutor(new barriergiver());
+        this.getCommand("colourcodes").setExecutor(new colour());
     }
 
     @Override

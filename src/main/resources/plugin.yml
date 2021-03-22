@@ -13,3 +13,7 @@ commands:
   barrier:
     description: Gives you a barrier
     usage: /barrier
+  colourcodes:
+    description: Shows you the colour codes
+    usage: /colourcodes
+    permission: quacksaftey.colour
