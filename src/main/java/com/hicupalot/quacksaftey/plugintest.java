@@ -15,7 +15,7 @@ public class plugintest implements CommandExecutor{
                  sender.sendMessage(ChatColor.RED+"[QUACKSAFETY] You haven't broken it Hicup!");
             }
             else {
-                sender.sendMessage(ChatColor.RED +"[QUACKSAFETY] You do not have permission to run that command");
+                 sender.sendMessage(ChatColor.GOLD +"[QUACK]"+ ChatColor.RED+"You do not have permission to run that command");
             }
             return true;
 

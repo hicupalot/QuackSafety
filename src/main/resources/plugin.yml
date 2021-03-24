@@ -10,6 +10,7 @@ commands:
     description: Tells you if you really messed it up
     usage: /didibreakit
     permission: quacksaftey.doesitwork
+    aliases: hicuptest
   barrier:
     description: Gives you a barrier
     usage: /barrier

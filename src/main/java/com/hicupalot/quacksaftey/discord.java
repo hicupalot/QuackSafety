@@ -12,7 +12,7 @@ public class discord implements CommandExecutor {
                     "Please remember you have to be 13+ to use Discord!");
         }
         else {
-            sender.sendMessage(ChatColor.RED +"[QUACK] You do not have permission to run that command");
+            sender.sendMessage(ChatColor.GOLD +"[QUACK]"+ ChatColor.RED+"You do not have permission to run that command");
         }
         return true;
 
