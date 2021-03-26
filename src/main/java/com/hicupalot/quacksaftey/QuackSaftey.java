@@ -1,4 +1,6 @@
 package com.hicupalot.quacksaftey;
+import org.bukkit.event.Event;
+import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
 
@@ -8,11 +10,12 @@ public final class QuackSaftey extends JavaPlugin {
     public void onEnable() {
         // Plugin startup logic
         System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey plugin initiated");
-        this.getCommand("didibreakit").setExecutor(new plugintest());
-        this.getCommand("barrier").setExecutor(new barriergiver());
-        this.getCommand("colourcodes").setExecutor(new colour());
-        this.getCommand("discord").setExecutor(new discord());
-        this.getCommand("feedback").setExecutor(new feedback());
+        getCommand("didibreakit").setExecutor(new plugintest());
+        getCommand("barrier").setExecutor(new barriergiver());
+        getCommand("colourcodes").setExecutor(new colour());
+        getCommand("discord").setExecutor(new discord());
+        getCommand("feedback").setExecutor(new feedback());
+        getServer().getPluginManager().registerEvents(new ProjectileInhibitor(), this);
     }
 
     @Override
