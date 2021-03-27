@@ -1,10 +1,7 @@
 package com.hicupalot.quacksaftey;
-import org.bukkit.event.Event;
-import org.bukkit.event.entity.ProjectileLaunchEvent;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.ChatColor;
 
-import java.awt.print.Book;
+import org.bukkit.ChatColor;
+import org.bukkit.plugin.java.JavaPlugin;
 
 public final class QuackSaftey extends JavaPlugin {
 
