@@ -4,6 +4,8 @@ import org.bukkit.event.entity.ProjectileLaunchEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.ChatColor;
 
+import java.awt.print.Book;
+
 public final class QuackSaftey extends JavaPlugin {
 
     @Override
