@@ -27,4 +27,4 @@ commands:
     description: Gives the feedback website
     usage: /feedback
     permission: quacksaftey.feedback
-    aliases: suggestions, bugs
+    aliases: [suggestions, bugs]
