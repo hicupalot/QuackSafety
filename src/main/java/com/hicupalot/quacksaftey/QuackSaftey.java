@@ -15,6 +15,7 @@ public final class QuackSaftey extends JavaPlugin {
         getCommand("discord").setExecutor(new discord());
         getCommand("feedback").setExecutor(new feedback());
         getServer().getPluginManager().registerEvents(new ProjectileInhibitor(), this);
+        getServer().getPluginManager().registerEvents(new PrimedTNTBlocker(), this);
     }
 
     @Override
