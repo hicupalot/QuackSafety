@@ -14,11 +14,9 @@ public class bookban implements Listener {
     @EventHandler
     public void BookBan(PlayerInteractEvent e) {
         if (e.getHand() == EquipmentSlot.HAND) {
-            if (e.getAction() == Action.RIGHT_CLICK_AIR) {
-                if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
-                    if (e.getClickedBlock().getType() == Material.WRITABLE_BOOK)
-                        if (e.getClickedBlock().getType() == Material.WRITTEN_BOOK)
-                            e.setCancelled(true);
+        if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) {
+        if (e.getClickedBlock().getType() == Material.WRITABLE_BOOK || e.getClickedBlock().getType() == Material.WRITTEN_BOOK) {
+        e.setCancelled(true);
                 }
             }
         }
