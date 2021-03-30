@@ -7,8 +7,6 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 
-import java.util.Objects;
-
 public class bookban implements Listener {
     @EventHandler
     public void BookBan(PlayerInteractEvent e) {
@@ -17,7 +15,7 @@ public class bookban implements Listener {
                 if (e.getClickedBlock()==null)
                     return;
                 }
-                if (Objects.requireNonNull(e.getClickedBlock()).getType() == Material.WRITABLE_BOOK || e.getClickedBlock().getType() == Material.WRITTEN_BOOK) {
+                if (e.getClickedBlock().getType() == Material.WRITABLE_BOOK || e.getClickedBlock().getType() == Material.WRITTEN_BOOK) {
                     e.setCancelled(true);
                 }
             }
