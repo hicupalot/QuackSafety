@@ -10,7 +10,7 @@ import org.bukkit.inventory.EquipmentSlot;
 public class bookban implements Listener {
     @EventHandler
     public void BookBan(PlayerInteractEvent e) {
-        if (e.getHand() == EquipmentSlot.HAND) {
+        if (e.getHand() == EquipmentSlot.HAND || e.getHand() == EquipmentSlot.OFF_HAND) {
             if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) {
                 if (e.getClickedBlock()==null)
                     return;
