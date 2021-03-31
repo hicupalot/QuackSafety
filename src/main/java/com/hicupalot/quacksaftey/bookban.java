@@ -12,13 +12,14 @@ public class bookban implements Listener {
     public void BookBan(PlayerInteractEvent e) {
         if (e.getHand() == EquipmentSlot.HAND || e.getHand() == EquipmentSlot.OFF_HAND) {
             if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) {
-                if (e.getClickedBlock()==null)
+                if (e.getClickedBlock()==null) {
                     return;
                 }
                 if (e.getClickedBlock().getType() == Material.WRITABLE_BOOK || e.getClickedBlock().getType() == Material.WRITTEN_BOOK) {
-                    e.setCancelled(true);
+                e.setCancelled(true);
                 }
             }
         }
 
-    }
+
+    }}
