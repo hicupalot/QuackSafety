@@ -1,5 +1,6 @@
 package com.hicupalot.quacksaftey;
 
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,6 +16,7 @@ public class bookban implements Listener {
                 if (e.getItem()==null) {
                     return;
                 }
+                Bukkit.broadcastMessage(e.getItem().getType().name());
                 if (e.getItem().getType() == Material.WRITABLE_BOOK || e.getItem().getType() == Material.WRITTEN_BOOK) {
                 e.setCancelled(true);
                 }
