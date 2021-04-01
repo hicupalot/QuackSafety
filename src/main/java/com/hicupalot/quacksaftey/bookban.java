@@ -20,7 +20,7 @@ public class bookban implements Listener {
                     return;
                 }
                // Bukkit.broadcastMessage(e.getItem().getType().name());
-                (e.getItem().getType() == Material.WRITABLE_BOOK || e.getItem().getType() == Material.WRITTEN_BOOK) {
+                if (e.getItem().getType() == Material.WRITABLE_BOOK || e.getItem().getType() == Material.WRITTEN_BOOK) {
                 e.setCancelled(true);
                 }
             }
