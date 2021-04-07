@@ -11,10 +11,10 @@ public class NBTBanner implements Listener {
     public void NBTBan(InventoryCreativeEvent e) {
         if (e.getClick() == ClickType.MIDDLE) {
             Player p = (Player) e.getWhoClicked();
-            if (p.hasPermission("quackSaftey.admin.NBTBypass"))
+            if (p.hasPermission("quacksaftey.nbtbypass"))
                 return;
         }
-        if (e.getCursor().getType() == Material.CHEST || e.getCursor().getType() == Material.DISPENSER || e.getCursor().getType() == Material.TRAPPED_CHEST){
+        if (e.getCursor().getType() == Material.CHEST || e.getCursor().getType() == Material.DISPENSER || e.getCursor().getType() == Material.TRAPPED_CHEST || e.getCursor().getType() == Material.HOPPER || e.getCursor().getType()== Material.DROPPER){
             e.setCancelled(true);
         }
         }

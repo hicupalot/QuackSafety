@@ -29,6 +29,6 @@ commands:
     permission: quacksaftey.feedback
     aliases: [suggestions, bugs]
   permissions:
-    quackSaftey.admin.NBTBypass:
+    quacksaftey.nbtbypass:
       description: 'Allows you to middle click certain items which could be dangerous'
       default: op
