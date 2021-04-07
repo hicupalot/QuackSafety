@@ -17,6 +17,7 @@ public final class QuackSaftey extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ProjectileInhibitor(), this);
         getServer().getPluginManager().registerEvents(new PrimedTNTBlocker(), this);
         getServer().getPluginManager().registerEvents(new bookban(), this);
+        getServer().getPluginManager().registerEvents(new NBTBanner(), this);
         System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey plugin loaded");
     }
 

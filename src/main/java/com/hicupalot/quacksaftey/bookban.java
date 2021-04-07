@@ -15,6 +15,7 @@ public class bookban implements Listener {
                 if (e.getItem()==null) {
                     return;
                 }
+               // Debug Mode below [Shows Item Name]
                // Bukkit.broadcastMessage(e.getItem().getType().name());
                 if (e.getItem().getType() == Material.WRITABLE_BOOK || e.getItem().getType() == Material.WRITTEN_BOOK) {
                 e.setCancelled(true);
