@@ -5,8 +5,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
-import org.bukkit.ChatColor;
 public class SpeedLimit implements Listener {
+    @SuppressWarnings( "deprecation" )
     @EventHandler
     public void speedingticket(PlayerMoveEvent e) {
         if (e.getFrom().distance(e.getTo()) > 20.0) {
