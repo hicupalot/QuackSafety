@@ -1,18 +1,16 @@
-package com.hicupalot.quacksaftey;
+package com.quacktopia.quacksaftey;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.entity.ArmorStand;
+import org.bukkit.entity.Entity;
 import org.bukkit.event.Listener;
-import org.bukkit.event.*;
-import org.bukkit.block.*;
-import org.bukkit.entity.*;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.material.*;
-import org.bukkit.inventory.*;
+import org.bukkit.inventory.EquipmentSlot;
+
 public class ArmorStandLimiter implements Listener {
-    public void ArmorStandChunk (PlayerInteractEvent e){
+    public void ArmorStandChunk(PlayerInteractEvent e){
         if(e.getPlayer().hasPermission("quacksaftey.armorstandbypass"))
             return;
         if (e.getHand() == EquipmentSlot.HAND || e.getHand() == EquipmentSlot.OFF_HAND) {
