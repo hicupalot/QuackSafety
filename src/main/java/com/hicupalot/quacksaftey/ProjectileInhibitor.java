@@ -1,4 +1,4 @@
-package com.quacktopia.quacksaftey;
+package com.hicupalot.quacksaftey;
 
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Projectile;

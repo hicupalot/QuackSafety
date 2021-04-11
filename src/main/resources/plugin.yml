@@ -4,10 +4,6 @@ main: com.hicupalot.quacksaftey.QuackSaftey
 api-version: 1.16
 authors: [hicupalot]
 description: The Plugin to Keep Players Safe
-depend:
-  - LuckPerms
-  - Litebans
-  - Essentials
 
 commands:
   didibreakit:
