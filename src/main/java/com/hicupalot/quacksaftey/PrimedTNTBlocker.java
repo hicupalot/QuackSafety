@@ -1,4 +1,4 @@
-package com.quacktopia.quacksaftey;
+package com.hicupalot.quacksaftey;
 import org.bukkit.entity.*;
 import org.bukkit.event.*;
 import org.bukkit.event.entity.EntitySpawnEvent;
