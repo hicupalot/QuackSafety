@@ -1,6 +1,6 @@
-name: QuackSaftey
+name: QuackSafety
 version: ${project.version}
-main: com.hicupalot.quacksaftey.QuackSaftey
+main: com.quacktopia.quacksaftey.QuackSaftey
 api-version: 1.16
 authors: [hicupalot]
 description: The Plugin to Keep Players Safe

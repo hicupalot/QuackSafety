@@ -1,4 +1,4 @@
-package com.hicupalot.quacksaftey;
+package com.quacktopia.quacksaftey;
 
 import org.bukkit.Material;
 import org.bukkit.event.EventHandler;

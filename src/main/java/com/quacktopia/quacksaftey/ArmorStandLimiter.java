@@ -1,4 +1,4 @@
-package com.hicupalot.quacksaftey;
+package com.quacktopia.quacksaftey;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
@@ -12,6 +12,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.material.*;
 import org.bukkit.inventory.*;
 public class ArmorStandLimiter implements Listener {
+    @EventHandler
     public void ArmorStandChunk (PlayerInteractEvent e){
         if(e.getPlayer().hasPermission("quacksaftey.armorstandbypass"))
             return;

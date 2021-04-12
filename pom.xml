@@ -4,15 +4,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.hicupalot</groupId>
-    <artifactId>QuackSaftey</artifactId>
-    <version>1.1.3</version>
-    <modules>
-        <module>maven</module>
-    </modules>
-    <packaging>pom</packaging>
+    <groupId>com.quacktopia</groupId>
+    <artifactId>QuackSafety</artifactId>
+    <version>1.4.1</version>
+    <packaging>jar</packaging>
 
-    <name>QuackSaftey</name>
+    <name>QuackSafety</name>
 
     <description>The Plugin to Keep Players Safe</description>
     <properties>
@@ -66,6 +63,7 @@
             <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
     </repositories>
+
     <dependencies>
         <dependency>
             <groupId>com.destroystokyo.paper</groupId>
