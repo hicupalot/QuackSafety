@@ -3,8 +3,6 @@ version: ${project.version}
 main: com.quacktopia.quacksaftey.QuackSaftey
 api-version: 1.16
 authors: [hicupalot]
-description: The Plugin to Keep Players Safe
-
 commands:
   didibreakit:
     description: Tells you if you really messed it up
@@ -29,7 +27,7 @@ commands:
     permission: quacksaftey.feedback
     aliases: [suggestions, bugs]
   permissions:
-    quacksaftey.nbtbypass:
+      quacksaftey.nbtbypass:
           description: 'Allows you to middle click certain items which could be dangerous'
           default: op
       quacksaftey.speedingticket:
