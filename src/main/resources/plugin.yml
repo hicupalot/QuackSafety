@@ -29,9 +29,13 @@ commands:
     permission: quacksaftey.feedback
     aliases: [suggestions, bugs]
   permissions:
-      quacksaftey.nbtbypass:
+    quacksaftey.nbtbypass:
           description: 'Allows you to middle click certain items which could be dangerous'
           default: op
       quacksaftey.speedingticket:
          descritpion: 'Lets you see the broadcast of speeding players'
          default: op
+      quacksaftey.armorstandbypass:
+        description: 'Lets you bypass the 5 armour stands a chunk limit'
+        default: op
+

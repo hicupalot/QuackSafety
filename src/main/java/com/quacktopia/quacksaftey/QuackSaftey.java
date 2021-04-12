@@ -1,5 +1,6 @@
 package com.quacktopia.quacksaftey;
 
+import jdk.jfr.Event;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -19,6 +20,7 @@ public final class QuackSaftey extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new bookban(), this);
         getServer().getPluginManager().registerEvents(new NBTBanner(), this);
         getServer().getPluginManager().registerEvents(new ArmorStandLimiter(), this);
+        getServer().getPluginManager().registerEvents(new EventChecker(), this);
         System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey plugin loaded");
     }
 
