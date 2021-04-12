@@ -17,7 +17,7 @@ public class ArmorStandLimiter implements Listener {
         if(e.getPlayer().hasPermission("quacksaftey.armorstandbypass"))
             return;
         if (e.getHand() == EquipmentSlot.HAND || e.getHand() == EquipmentSlot.OFF_HAND) {
-            if (e.getAction() == Action.RIGHT_CLICK_BLOCK || e.getAction() == Action.RIGHT_CLICK_AIR) {
+            if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
                 if (e.getItem()==null) {
                     return;
             }

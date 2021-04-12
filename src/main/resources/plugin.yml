@@ -36,4 +36,7 @@ commands:
       quacksaftey.armorstandbypass:
         description: 'Lets you bypass the 5 armour stands a chunk limit'
         default: op
+      quacksaftey.bookbypass:
+        description: 'Lets you bypass the book ban'
+        default: op
 
