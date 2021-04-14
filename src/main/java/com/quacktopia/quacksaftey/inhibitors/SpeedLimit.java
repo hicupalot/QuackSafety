@@ -1,4 +1,4 @@
-package com.quacktopia.quacksaftey;
+package com.quacktopia.quacksaftey.inhibitors;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;

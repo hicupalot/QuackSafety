@@ -1,4 +1,4 @@
-package com.quacktopia.quacksaftey;
+package com.quacktopia.quacksaftey.commands;
 
 import org.bukkit.ChatColor;
 import org.bukkit.Material;

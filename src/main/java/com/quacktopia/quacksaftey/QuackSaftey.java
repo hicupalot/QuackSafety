@@ -1,6 +1,7 @@
 package com.quacktopia.quacksaftey;
 
-import jdk.jfr.Event;
+import com.quacktopia.quacksaftey.commands.*;
+import com.quacktopia.quacksaftey.inhibitors.*;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -21,6 +22,7 @@ public final class QuackSaftey extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new NBTBanner(), this);
         getServer().getPluginManager().registerEvents(new ArmorStandLimiter(), this);
         getServer().getPluginManager().registerEvents(new EventChecker(), this);
+        getServer().getPluginManager().registerEvents(new LaggOmeter(), this);
         System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey plugin loaded");
     }
 
