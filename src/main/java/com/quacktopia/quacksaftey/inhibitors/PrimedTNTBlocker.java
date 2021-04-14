@@ -1,8 +1,9 @@
 package com.quacktopia.quacksaftey.inhibitors;
-import org.bukkit.entity.*;
-import org.bukkit.event.*;
+
+import org.bukkit.entity.EntityType;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntitySpawnEvent;
-import org.bukkit.event.entity.ProjectileLaunchEvent;
 
 public class PrimedTNTBlocker implements Listener{
     @EventHandler

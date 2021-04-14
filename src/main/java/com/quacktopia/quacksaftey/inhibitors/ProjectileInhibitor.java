@@ -8,6 +8,7 @@ import org.bukkit.event.entity.ProjectileLaunchEvent;
 
 
 public class ProjectileInhibitor implements Listener {
+    @SuppressWarnings("unused")
     @EventHandler
     public void projectileLaunch(ProjectileLaunchEvent e) {
         Projectile projectile = e.getEntity();

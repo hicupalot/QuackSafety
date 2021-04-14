@@ -3,14 +3,15 @@ package com.quacktopia.quacksaftey.inhibitors;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.entity.*;
+import org.bukkit.entity.Entity;
+import org.bukkit.entity.Item;
+import org.bukkit.entity.ItemFrame;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
-import org.bukkit.inventory.ItemStack;
 
 @SuppressWarnings("deprecation")
     public class LaggOmeter implements Listener {
@@ -47,18 +48,17 @@ import org.bukkit.inventory.ItemStack;
         public void DroppedItems(PlayerDropItemEvent e) {
             if (e.getPlayer().hasPermission("quacksaftey.dropitembypass"))
                 return;
-                if (e.getPlayer().dropItem(true)) {
-                }
-                    int numberofdroppeditems = 1;
-                        for (final Entity entity : e.getPlayer().getLocation().getChunk().getEntities()) {
-                            if (entity instanceof Item) {
-                                numberofdroppeditems++;
-                            }
-                        }
-                        if (numberofdroppeditems > 6400) {
-                            Bukkit.broadcast(ChatColor.YELLOW+"["+ ChatColor.RED+"LAG-O-METER"+ ChatColor.YELLOW+"]"+ ChatColor.LIGHT_PURPLE + e.getPlayer().getName()+" is possibly trying to exploit the server by dropping " +
-                                    " more then 100 ItemStack Drops in a single chunk", "quacksaftey.laggometer");
-                        }
-
+            if (e.getPlayer().dropItem(true)) {
+                int numberofdroppeditems = 1;
+                for (final Entity entity : e.getPlayer().getLocation().getChunk().getEntities()) {
+                    if (entity instanceof Item) {
+                        numberofdroppeditems++;
                     }
                 }
+                if (numberofdroppeditems > 6400) {
+                    Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by dropping " +
+                            " more then 100 ItemStack Drops in a single chunk", "quacksaftey.laggometer");
+                }
+
+            }
+        }}

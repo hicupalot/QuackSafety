@@ -1,13 +1,14 @@
 package com.quacktopia.quacksaftey.inhibitors;
-import org.bukkit.event.*;
+
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDispenseEvent;
 import org.bukkit.event.block.BlockPistonEvent;
 import org.bukkit.event.entity.AreaEffectCloudApplyEvent;
 import org.bukkit.event.entity.LingeringPotionSplashEvent;
 import org.bukkit.event.player.PlayerRecipeDiscoverEvent;
 import org.bukkit.event.world.StructureGrowEvent;
-import org.bukkit.material.*;
-import org.bukkit.block.*;
+
 public class EventChecker implements Listener {
     @EventHandler
     public void onBlockDispense(BlockDispenseEvent e){
