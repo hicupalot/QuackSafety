@@ -26,7 +26,7 @@ import org.bukkit.inventory.EquipmentSlot;
                     }
                     int numberofitemframes = 1;
                     if (e.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.ITEM_FRAME) || e.getPlayer().getInventory().getItemInOffHand().getType().equals(Material.ITEM_FRAME)) {
-                        for (final Entity entity : e.getPlayer().getLocation().getChunk().getEntities()) {
+                        for (Entity entity : e.getPlayer().getLocation().getChunk().getEntities()) {
                             if (entity instanceof ItemFrame) {
                                 numberofitemframes++;
                             }
@@ -50,7 +50,7 @@ import org.bukkit.inventory.EquipmentSlot;
                 return;
             if (e.getPlayer().dropItem(true)) {
                 int numberofdroppeditems = 1;
-                for (final Entity entity : e.getPlayer().getLocation().getChunk().getEntities()) {
+                for (Entity entity : e.getPlayer().getLocation().getChunk().getEntities()) {
                     if (entity instanceof Item) {
                         numberofdroppeditems++;
                     }
@@ -61,4 +61,29 @@ import org.bukkit.inventory.EquipmentSlot;
                 }
 
             }
-        }}
+        }
+        @EventHandler
+        public void Painting(PlayerInteractEvent e) {
+            if (e.getPlayer().hasPermission("quacksaftey.paintingbypass"))
+                return;
+            if (e.getHand() == EquipmentSlot.HAND) {
+                if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
+                    if (e.getItem() == null) {
+                        return;
+                    }
+                    int numberofpaintings = 1;
+                    if (e.getPlayer().getInventory().getItemInMainHand().getType().equals(Material.PAINTING) || e.getPlayer().getInventory().getItemInOffHand().getType().equals(Material.PAINTING)) {
+                        for (Entity entity : e.getPlayer().getLocation().getChunk().getEntities()) {
+                            if (entity instanceof ItemFrame) {
+                                numberofpaintings++;
+                            }
+                        }
+                        if (numberofpaintings > 100) {
+                            Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by placing " +
+                                    " more then 100 paintings in a single chunk", "quacksaftey.laggometer");
+                        }
+                    }
+                }
+            }
+        }
+    }

@@ -48,4 +48,7 @@ commands:
       quacksaftey.laggometer:
         description: 'Allows you to view the lagg warnings'
         default: op
+      quacksaftey.paintingbypass:
+        description: 'Allows you to bypass the Painting Warning'
+        default: op
 

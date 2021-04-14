@@ -19,7 +19,7 @@ public class bookban implements Listener {
                 }
                 // Bukkit.broadcastMessage(e.getItem().getType().name());
                 if (e.getItem().getType() == Material.WRITABLE_BOOK || e.getItem().getType() == Material.WRITTEN_BOOK) {
-                    e.getPlayer().closeInventory();
+                    e.getPlayer().closeInventory(); //Needed to close the Book and Quill GUI
                     e.setCancelled(true);
                 }
             }
