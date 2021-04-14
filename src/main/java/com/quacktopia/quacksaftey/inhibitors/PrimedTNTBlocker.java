@@ -6,6 +6,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntitySpawnEvent;
 
 public class PrimedTNTBlocker implements Listener{
+
     @EventHandler
     public void primedTNTStop(EntitySpawnEvent event)
     {

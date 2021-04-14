@@ -16,6 +16,7 @@ public final class QuackSaftey extends JavaPlugin {
         getCommand("colourcodes").setExecutor(new colour());
         getCommand("discord").setExecutor(new discord());
         getCommand("feedback").setExecutor(new feedback());
+        System.out.println(ChatColor.GOLD+"[QuackSafety] Commands Loaded");
         getServer().getPluginManager().registerEvents(new ProjectileInhibitor(), this);
         getServer().getPluginManager().registerEvents(new PrimedTNTBlocker(), this);
         getServer().getPluginManager().registerEvents(new bookban(), this);
@@ -23,6 +24,7 @@ public final class QuackSaftey extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ArmorStandLimiter(), this);
         getServer().getPluginManager().registerEvents(new EventChecker(), this);
         getServer().getPluginManager().registerEvents(new LaggOmeter(), this);
+        System.out.println(ChatColor.GOLD+"[QuackSafety] Inhibitors and Events loaded");
         System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey plugin loaded");
     }
 
