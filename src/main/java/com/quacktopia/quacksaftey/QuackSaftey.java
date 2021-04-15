@@ -24,6 +24,7 @@ public final class QuackSaftey extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ArmorStandLimiter(), this);
         getServer().getPluginManager().registerEvents(new EventChecker(), this);
         getServer().getPluginManager().registerEvents(new LaggOmeter(), this);
+        getServer().getPluginManager().registerEvents(new SpeedLimit(), this);
         System.out.println(ChatColor.GOLD+"[QuackSafety] Inhibitors and Events loaded");
         System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey plugin loaded");
     }
