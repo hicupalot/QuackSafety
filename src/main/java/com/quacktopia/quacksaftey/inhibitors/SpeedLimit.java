@@ -6,7 +6,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
+import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -15,13 +17,10 @@ import org.bukkit.inventory.ItemStack;
 
 public class SpeedLimit implements Listener {
     @SuppressWarnings("deprecation")
-    @EventHandler
+    @EventHandler(priority = EventPriority.LOW)
     public void speedingticket(PlayerVelocityEvent e) {
         if (!e.getPlayer().isFlying()) {
-            if (e.getPlayer().getFallDistance() > 0.1) {
-                return;
-            }
-            if (e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.BLUE_ICE) {
+            if (e.getPlayer().getFallDistance() > 5) {
                 return;
             }
             if (e.getVelocity().lengthSquared() > 4 && (e.getVelocity().lengthSquared() < 10)) {
@@ -40,7 +39,7 @@ public class SpeedLimit implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.NORMAL)
     public void majorspeedingviolation(PlayerVelocityEvent e) {
         if (e.getVelocity().lengthSquared() > 20) {
             e.setCancelled(true);
@@ -49,7 +48,7 @@ public class SpeedLimit implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler (priority = EventPriority.HIGH)
     public void speedbootsviolation(PlayerVelocityEvent e) {
         if (e.getVelocity().lengthSquared() > 15) {
             if (!e.getPlayer().getInventory().getBoots().getType().isEmpty()) {
@@ -58,7 +57,7 @@ public class SpeedLimit implements Listener {
         }
     }
 
-    @EventHandler
+    @EventHandler(priority = EventPriority.HIGHEST)
     public void BlueIceException(PlayerVelocityEvent e) {
         if (e.getVelocity().lengthSquared() > 100000) {
             if (e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.BLUE_ICE) {
