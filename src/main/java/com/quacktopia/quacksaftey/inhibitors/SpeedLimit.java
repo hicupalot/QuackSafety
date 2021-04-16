@@ -1,17 +1,12 @@
 package com.quacktopia.quacksaftey.inhibitors;
 
-import net.minecraft.server.v1_16_R3.BlockIronBars;
-import net.minecraft.server.v1_16_R3.IResourceManager;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
-import org.bukkit.event.Event;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerVelocityEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -30,6 +25,7 @@ public class SpeedLimit implements Listener {
             }
         }
     @EventHandler
+    @SuppressWarnings("deprecation")
     public void flyingspeedticket(PlayerVelocityEvent e) {
         if (e.getPlayer().isFlying()) {
             if (e.getVelocity().lengthSquared() > 6 && e.getVelocity().lengthSquared() < 15) {
@@ -40,6 +36,7 @@ public class SpeedLimit implements Listener {
     }
 
     @EventHandler(priority = EventPriority.NORMAL)
+    @SuppressWarnings("deprecation")
     public void majorspeedingviolation(PlayerVelocityEvent e) {
         if (e.getVelocity().lengthSquared() > 20) {
             e.setCancelled(true);
@@ -58,6 +55,7 @@ public class SpeedLimit implements Listener {
     }
 
     @EventHandler(priority = EventPriority.HIGHEST)
+    @SuppressWarnings("deprecation")
     public void BlueIceException(PlayerVelocityEvent e) {
         if (e.getVelocity().lengthSquared() > 100000) {
             if (e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.BLUE_ICE) {
