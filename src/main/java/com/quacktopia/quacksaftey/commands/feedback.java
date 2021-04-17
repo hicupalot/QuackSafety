@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 
 public class feedback implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("quacksaftey.feedback")) {
+        if (sender.hasPermission("quacksafety.feedback")) {
             sender.sendMessage(ChatColor.GOLD + "[Quack] If you have any feedback/bugs/suggestions" +
                     " about the server please put them here"+ ChatColor.AQUA+" https://quacktopia.com/feedback");
         } else {

@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 
 public class discord implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("quacksaftey.discord")) {
+        if (sender.hasPermission("quacksafety.discord")) {
             sender.sendMessage(ChatColor.GOLD + "[Quack] Join the Discord here" + ChatColor.AQUA + " https://quacktopia.com/discord! " +
                     ChatColor.GOLD + "Please remember you have to be 13+ to use Discord!");
         } else {

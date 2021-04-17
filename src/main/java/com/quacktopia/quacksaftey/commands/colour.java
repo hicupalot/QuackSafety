@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 
 public class colour implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("quacksaftey.colour")) {
+        if (sender.hasPermission("quacksafety.colour")) {
             sender.sendMessage(ChatColor.WHITE + "[Quack] The colour code for black is &0");
             sender.sendMessage(ChatColor.DARK_BLUE + "[Quack] The colour code for dark blue is &1!");
             sender.sendMessage(ChatColor.DARK_GREEN + "[Quack] The colour code for dark green is &2");

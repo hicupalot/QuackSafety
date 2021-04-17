@@ -6,13 +6,13 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
+@SuppressWarnings("unused")
 public class playtime implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender.hasPermission("quacksaftey.playtime")) {
+        if (sender.hasPermission("quacksafety.playtime")) {
             if (sender instanceof Player) {
                 Player p = (Player) sender;
-                p.getStatistic(Statistic.PLAY_ONE_MINUTE); //ticks played not minutes
+                p.getStatistic(Statistic.PLAY_ONE_MINUTE); //ticks played not minutes [always divide by 20]
                 int seconds = p.getStatistic(Statistic.PLAY_ONE_MINUTE) / 20;
                 int minutes = seconds / 60;
                 int hours = minutes / 60;

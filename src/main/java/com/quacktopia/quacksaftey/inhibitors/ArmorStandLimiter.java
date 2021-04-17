@@ -13,7 +13,7 @@ import org.bukkit.inventory.EquipmentSlot;
 public class ArmorStandLimiter implements Listener {
     @EventHandler
     public void ArmorStandChunk(PlayerInteractEvent e) {
-        if (e.getPlayer().hasPermission("quacksaftey.armorstandbypass"))
+        if (e.getPlayer().hasPermission("quacksafety.armorstandbypass"))
             return;
         if (e.getHand() == EquipmentSlot.HAND || e.getHand() == EquipmentSlot.OFF_HAND) {
             if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {

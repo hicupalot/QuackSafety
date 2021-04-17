@@ -20,7 +20,7 @@ public class SpeedLimit implements Listener {
             }
             if (e.getVelocity().lengthSquared() > 4 && (e.getVelocity().lengthSquared() < 10)) {
                     Bukkit.broadcast(ChatColor.AQUA + "[" + ChatColor.RED + "STAFF" + ChatColor.AQUA + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly hacking/speeding with a minimum " +
-                            "velocity of" + e.getPlayer().getVelocity() + " Please check on this user", "quacksaftey.speedingticket");
+                            "velocity of" + e.getPlayer().getVelocity() + " Please check on this user", "quacksafety.speedingticket");
                 }
             }
         }
@@ -30,7 +30,7 @@ public class SpeedLimit implements Listener {
         if (e.getPlayer().isFlying()) {
             if (e.getVelocity().lengthSquared() > 6 && e.getVelocity().lengthSquared() < 15) {
                 Bukkit.broadcast(ChatColor.AQUA + "[" + ChatColor.RED + "STAFF" + ChatColor.AQUA + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly hacking/speeding with a minimum " +
-                        "velocity of" + e.getPlayer().getVelocity() + " Please check on this user", "quacksaftey.speedingticket");
+                        "velocity of" + e.getPlayer().getVelocity() + " Please check on this user", "quacksafety.speedingticket");
             }
         }
     }
@@ -41,7 +41,7 @@ public class SpeedLimit implements Listener {
         if (e.getVelocity().lengthSquared() > 20) {
             e.setCancelled(true);
             Bukkit.broadcast(ChatColor.AQUA + "[" + ChatColor.RED + "STAFF" + ChatColor.AQUA + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly hacking/speeding with a minimum " +
-                    "velocity of" + e.getPlayer().getVelocity() + " Please check on this user", "quacksaftey.speedingticket");
+                    "velocity of" + e.getPlayer().getVelocity() + " Please check on this user", "quacksafety.speedingticket");
         }
     }
 
@@ -61,7 +61,7 @@ public class SpeedLimit implements Listener {
             if (e.getPlayer().getLocation().getBlock().getRelative(BlockFace.DOWN).getType() == Material.BLUE_ICE) {
                 e.setCancelled(true);
                 Bukkit.broadcast(ChatColor.AQUA + "[" + ChatColor.RED + "STAFF" + ChatColor.AQUA + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly hacking/speeding with a minimum " +
-                        "velocity of" + e.getPlayer().getVelocity() + " Please check on this user", "quacksaftey.speedingticket");
+                        "velocity of" + e.getPlayer().getVelocity() + " Please check on this user", "quacksafety.speedingticket");
             }
         }
     }

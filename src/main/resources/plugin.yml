@@ -7,7 +7,7 @@ commands:
   didibreakit:
     description: Tells you if you really messed it up
     usage: /didibreakit
-    permission: quacksaftey.doesitwork
+    permission: quacksafety.doesitwork
     aliases: hicuptest
   barrier:
     description: Gives you a barrier
@@ -15,40 +15,44 @@ commands:
   colourcodes:
     description: Shows you the colour codes
     usage: /colourcodes
-    permission: quacksaftey.colour
+    permission: quacksafety.colour
     aliases: colorcodes
   discord:
     description: gives you the Quacktopia Discord Link
     usage: /discord
-    permission: quacksaftey.discord
+    permission: quacksafety.discord
   feedback:
     description: Gives the feedback website
     usage: /feedback
-    permission: quacksaftey.feedback
+    permission: quacksafety.feedback
     aliases: [suggestions, bugs]
+  playtime:
+    description: Shows you the playtime of a player
+    usage: /playtime
+    permission: quacksafety.playtime
+
   permissions:
-      quacksaftey.nbtbypass:
+      quacksafety.nbtbypass:
           description: 'Allows you to middle click certain items which could be dangerous'
           default: op
-      quacksaftey.speedingticket:
+      quacksafety.speedingticket:
          descritpion: 'Lets you see the broadcast of speeding players'
          default: op
-      quacksaftey.armorstandbypass:
+      quacksafety.armorstandbypass:
         description: 'Lets you bypass the 5 armour stands a chunk limit'
         default: op
-      quacksaftey.bookbypass:
+      quacksafety.bookbypass:
         description: 'Lets you bypass the book ban'
         default: op
-      quacksaftey.itemframebypass:
+      quacksafety.itemframebypass:
         description: 'Lets you bypass the item frame warning'
         default: op
-      quacksaftey.dropitembypass:
+      quacksafety.dropitembypass:
         description: 'Lets you bypass the ItemDrop Warning'
         default: op
-      quacksaftey.laggometer:
+      quacksafety.laggometer:
         description: 'Allows you to view the lagg warnings'
         default: op
-      quacksaftey.paintingbypass:
+      quacksafety.paintingbypass:
         description: 'Allows you to bypass the Painting Warning'
         default: op
-

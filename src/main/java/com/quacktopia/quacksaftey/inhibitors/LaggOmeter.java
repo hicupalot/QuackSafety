@@ -17,7 +17,7 @@ import org.bukkit.inventory.EquipmentSlot;
     public class LaggOmeter implements Listener {
         @EventHandler
         public void AnyItemFrame(PlayerInteractEvent e) {
-            if (e.getPlayer().hasPermission("quacksaftey.itemframebypass"))
+            if (e.getPlayer().hasPermission("quacksafety.itemframebypass"))
                 return;
             if (e.getHand() == EquipmentSlot.HAND){
                 if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
@@ -33,7 +33,7 @@ import org.bukkit.inventory.EquipmentSlot;
                         }
                         if (numberofitemframes > 100) {
                             Bukkit.broadcast(ChatColor.YELLOW+"["+ ChatColor.RED+"LAG-O-METER"+ ChatColor.YELLOW+"]"+ ChatColor.LIGHT_PURPLE + e.getPlayer().getName()+" is possibly trying to exploit the server by placing " +
-                                    " more then 100 Item Frames in a single chunk", "quacksaftey.laggometer");
+                                    " more then 100 Item Frames in a single chunk", "quacksafety.laggometer");
                         }
 
                     }
@@ -46,7 +46,7 @@ import org.bukkit.inventory.EquipmentSlot;
         }
         @EventHandler
         public void DroppedItems(PlayerDropItemEvent e) {
-            if (e.getPlayer().hasPermission("quacksaftey.dropitembypass"))
+            if (e.getPlayer().hasPermission("quacksafety.dropitembypass"))
                 return;
             if (e.getPlayer().dropItem(true)) {
                 int numberofdroppeditems = 1;
@@ -57,14 +57,14 @@ import org.bukkit.inventory.EquipmentSlot;
                 }
                 if (numberofdroppeditems > 6400) {
                     Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by dropping " +
-                            " more then 100 ItemStack Drops in a single chunk", "quacksaftey.laggometer");
+                            " more then 100 ItemStack Drops in a single chunk", "quacksafety.laggometer");
                 }
 
             }
         }
         @EventHandler
         public void Painting(PlayerInteractEvent e) {
-            if (e.getPlayer().hasPermission("quacksaftey.paintingbypass"))
+            if (e.getPlayer().hasPermission("quacksafety.paintingbypass"))
                 return;
             if (e.getHand() == EquipmentSlot.HAND) {
                 if (e.getAction() == Action.RIGHT_CLICK_BLOCK) {
@@ -80,7 +80,7 @@ import org.bukkit.inventory.EquipmentSlot;
                         }
                         if (numberofpaintings > 100) {
                             Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by placing " +
-                                    " more then 100 paintings in a single chunk", "quacksaftey.laggometer");
+                                    " more then 100 paintings in a single chunk", "quacksafety.laggometer");
                         }
                     }
                 }
