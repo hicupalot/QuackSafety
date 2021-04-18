@@ -14,12 +14,14 @@ public class playtime implements CommandExecutor {
         if (sender.hasPermission("quacksafety.playtime")) {
             if (sender instanceof Player) {
                 Player target = Bukkit.getPlayerExact(args[0]);
-            if (args.length < 2) {
+            if (args.length < 1) {
                 sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "Please do /playtime (player)");
+                return true;
             }
                 Player p = (Player) sender;
                 if (target == null) {
                     sender.sendMessage(ChatColor.GOLD + "QUACK" + ChatColor.RED + "You must supply a valid Player");
+                    return true;
                 }
                 target.getStatistic(Statistic.PLAY_ONE_MINUTE); //ticks played not minutes [always divide by 20]
                 long ticks = p.getStatistic(Statistic.PLAY_ONE_MINUTE);
