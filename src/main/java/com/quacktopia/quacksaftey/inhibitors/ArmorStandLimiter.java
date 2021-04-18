@@ -1,12 +1,17 @@
 package com.quacktopia.quacksaftey.inhibitors;
 
+import com.destroystokyo.paper.event.entity.EntityPathfindEvent;
+import net.minecraft.server.v1_16_R3.FluidTypeFlowing;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.block.BlockFace;
 import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Entity;
+import org.bukkit.entity.EntityType;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
+import org.bukkit.event.entity.EntityChangeBlockEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 
@@ -33,9 +38,15 @@ public class ArmorStandLimiter implements Listener {
                     }
 
                 }
+
             }
         }
-
-
-    }
+        }
+@EventHandler
+public void ArmorStandWater(EntityChangeBlockEvent e){
+  if (e.getBlock().getRelative(BlockFace.DOWN).getType().equals(Material.WATER) && e.getEntityType().equals(EntityType.ARMOR_STAND)) {
+  e.setCancelled(true);
+  }
+  }
 }
+

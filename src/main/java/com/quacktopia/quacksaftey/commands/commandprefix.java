@@ -1,6 +1,6 @@
 package com.quacktopia.quacksaftey.commands;
-import org.bukkit.event.*;
-import org.bukkit.command.*;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 
 public class commandprefix implements Listener {
@@ -72,7 +72,7 @@ public class commandprefix implements Listener {
     public void sun(PlayerCommandPreprocessEvent e) {
         if (e.getMessage().startsWith("/plotsun")) {
             e.setCancelled(true);
-            e.setMessage("/p flag set weather clear");
+            e.getPlayer().performCommand("/p flag set weather clear");
             e.getPlayer().sendMessage("You have successfully made your plot sunny");
         }
     }
@@ -80,8 +80,8 @@ public class commandprefix implements Listener {
     public void snow(PlayerCommandPreprocessEvent e) {
         if (e.getMessage().startsWith("/plotsnow")) {
             e.setCancelled(true);
-            e.setMessage("/p flag set weather rain");
-            e.setMessage("/p setbiome snowy_taiga");
+            e.getPlayer().performCommand("/p flag set weather rain");
+            e.getPlayer().performCommand("/p setbiome snowy_taiga");
             e.getPlayer().sendMessage("You have successfully made your plot snowy");
         }
     }
