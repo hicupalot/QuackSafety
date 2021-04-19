@@ -5,6 +5,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDispenseEvent;
 import org.bukkit.event.block.BlockPistonEvent;
+import org.bukkit.event.block.BlockPistonExtendEvent;
+import org.bukkit.event.block.BlockPistonRetractEvent;
 import org.bukkit.event.entity.AreaEffectCloudApplyEvent;
 import org.bukkit.event.entity.LingeringPotionSplashEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
@@ -34,7 +36,11 @@ public class EventChecker implements Listener {
         e.setCancelled(true);
     }
     @EventHandler
-    public void Piston(BlockPistonEvent e) {
+    public void Piston(BlockPistonExtendEvent e) {
+        e.setCancelled(true);
+    }
+    @EventHandler
+    public void PistonIn(BlockPistonRetractEvent e) {
         e.setCancelled(true);
     }
 }
