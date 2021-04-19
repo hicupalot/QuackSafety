@@ -28,7 +28,8 @@ commands:
     aliases: [suggestions, bugs]
   playtime:
     description: Shows you the playtime of a player
-    usage: /playtime
+    usage: /<command> <player>
+    aliases: [totalplaytime]
     permission: quacksafety.playtime
 
   permissions:

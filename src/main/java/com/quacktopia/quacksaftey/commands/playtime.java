@@ -13,7 +13,7 @@ public class playtime implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("quacksafety.playtime")) {
             if (sender instanceof Player) {
-                Player target = Bukkit.getPlayerExact(args[0]);
+                Player target = Bukkit.getPlayerExact(args[1]);
             if (args.length < 1) {
                 sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "Please do /playtime (player)");
                 return true;
@@ -31,9 +31,9 @@ public class playtime implements CommandExecutor {
                 long minutes = seconds / 60;
                 long days = s/(60*60*24);
                 seconds = s % 60;
-                sender.sendMessage(ChatColor.GOLD + p.getName() + ":" +
+                sender.sendMessage(ChatColor.GOLD + target.getName() + ":" +
                         "Playtime:" + days + hours + minutes + seconds + ".");
-                sender.sendMessage(ChatColor.BLUE + "Games Quit:" + p.getStatistic(Statistic.LEAVE_GAME));
+                sender.sendMessage(ChatColor.BLUE + "Games Quit:" + target.getStatistic(Statistic.LEAVE_GAME));
             } else {
                 sender.sendMessage(ChatColor.RED + "You do not have permission to run this command");
             }
