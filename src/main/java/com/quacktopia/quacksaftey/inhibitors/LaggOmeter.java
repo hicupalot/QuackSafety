@@ -48,16 +48,16 @@ import org.bukkit.inventory.EquipmentSlot;
         public void DroppedItems(PlayerDropItemEvent e) {
             if (e.getPlayer().hasPermission("quacksafety.dropitembypass"))
                 return;
-            if (e.getPlayer().dropItem(true)) {
+            if (e.getPlayer().dropItem(false)) {
                 int numberofdroppeditems = 1;
                 for (Entity entity : e.getPlayer().getLocation().getChunk().getEntities()) {
                     if (entity instanceof Item) {
                         numberofdroppeditems++;
                     }
                 }
-                if (numberofdroppeditems > 6400) {
+                if (numberofdroppeditems > 640) {
                     Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by dropping " +
-                            " more then 100 ItemStack Drops in a single chunk", "quacksafety.laggometer");
+                            " more then 640 Item Drops in a single chunk", "quacksafety.laggometer");
                 }
 
             }
@@ -84,6 +84,7 @@ import org.bukkit.inventory.EquipmentSlot;
                         }
                     }
                 }
+
             }
         }
     }
