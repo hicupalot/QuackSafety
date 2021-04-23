@@ -22,6 +22,8 @@ import java.util.concurrent.TimeUnit;
 @SuppressWarnings("deprecation")
     public class LaggOmeter implements Listener {
     private HashMap<UUID, Long> cooldown = new HashMap<UUID,Long>();
+    private HashMap<UUID, Long> cooldowndrop = new HashMap<UUID,Long>();
+    private HashMap<UUID, Long> cooldownpainting = new HashMap<UUID,Long>();
     private int cooldowntime = 3600;
 
         @EventHandler
@@ -79,15 +81,15 @@ import java.util.concurrent.TimeUnit;
                 if (numberofdroppeditems == 640) {
                     Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by dropping " +
                             "640 Item Drops in a single chunk", "quacksafety.laggometer");
-                    cooldown.put(p.getUniqueId(), System.currentTimeMillis());
+                    cooldowndrop.put(p.getUniqueId(), System.currentTimeMillis());
                 }
                 if (numberofdroppeditems > 640) {
-                    if (cooldown.containsKey(p.getUniqueId())){
-                        long secondsleft = (System.currentTimeMillis() - cooldown.get(p.getUniqueId()));
+                    if (cooldowndrop.containsKey(p.getUniqueId())){
+                        long secondsleft = (System.currentTimeMillis() - cooldowndrop.get(p.getUniqueId()));
                         if (secondsleft <= 0) {
                             Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by dropping " +
                                     " more than 640 Item Drops in a single chunk", "quacksafety.laggometer");
-                            cooldown.put(p.getUniqueId(), System.currentTimeMillis());
+                            cooldowndrop.put(p.getUniqueId(), System.currentTimeMillis());
                         }
                         else {
                             return;
@@ -117,15 +119,15 @@ import java.util.concurrent.TimeUnit;
                         if (numberofpaintings == 100) {
                             Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by placing " +
                                     " 100 paintings in a single chunk", "quacksafety.laggometer");
-                            cooldown.put(p.getUniqueId(), System.currentTimeMillis());
+                            cooldownpainting.put(p.getUniqueId(), System.currentTimeMillis());
                         }
                         if (numberofpaintings > 100) {
-                            if (cooldown.containsKey(p.getUniqueId())){
-                                long secondsleft = (System.currentTimeMillis() - cooldown.get(p.getUniqueId()));
+                            if (cooldownpainting.containsKey(p.getUniqueId())){
+                                long secondsleft = (System.currentTimeMillis() - cooldownpainting.get(p.getUniqueId()));
                                 if (secondsleft <= 0) {
                                 Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by placing " +
                                             " more then 100 paintings in a single chunk", "quacksafety.laggometer");
-                                    cooldown.put(p.getUniqueId(), System.currentTimeMillis());
+                                    cooldownpainting.put(p.getUniqueId(), System.currentTimeMillis());
                                 }
                                 else {
                                     return;
