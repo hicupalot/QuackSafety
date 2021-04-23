@@ -18,9 +18,7 @@ public class SpeedLimit implements Listener {
     @SuppressWarnings("deprecation")
     private HashMap<UUID, Long> cooldownspeed = new HashMap<UUID,Long>();
     private int cooldowntime = 3600;
-    private int emergencyspeed = 10;
     private HashMap<UUID, Long> flycooldown = new HashMap<UUID,Long>();
-    private HashMap<UUID, Long> supercooldown = new HashMap<UUID,Long>();
     @EventHandler(priority = EventPriority.LOW)
     public void speedingticket(PlayerVelocityEvent e) {
         Player p = e.getPlayer();
