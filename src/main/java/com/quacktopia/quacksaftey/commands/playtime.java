@@ -7,13 +7,13 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-
 @SuppressWarnings("unused")
 public class playtime implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("quacksafety.playtime")) {
+            String username = args[0];
                 Player target = Bukkit.getServer().getPlayer(args[0]);
-            if (args.length < 0) {
+            if (args.length < 1) {
                 sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "Please do /playtime (player)");
                 return true;
             }
@@ -29,13 +29,14 @@ public class playtime implements CommandExecutor {
                 long hours = s / (60 * 60);
                 long minutes = seconds / 60;
                 long days = s/(60*60*24);
+                long hours1 = (s % hours*60*60);
                 seconds = s % 60;
-                sender.sendMessage(ChatColor.AQUA + "Username" + ChatColor.YELLOW + " :" + ChatColor.GOLD +  target.getName());
+                sender.sendMessage(ChatColor.AQUA + "Username" + ChatColor.YELLOW + ": " + ChatColor.GOLD +  target.getName());
                 sender.sendMessage(ChatColor.AQUA +
-                        "Playtime" + ChatColor.YELLOW + " :" + ChatColor.GOLD + days + " days" + hours + " hours" + minutes + " minutes" + seconds + " seconds"  + ".");
-                sender.sendMessage(ChatColor.AQUA + "Games Quit" + ChatColor.YELLOW + " :" + ChatColor.GOLD +  target.getStatistic(Statistic.LEAVE_GAME));
+                        "Playtime" + ChatColor.YELLOW + ": " + ChatColor.GOLD + days + " days" + hours + " hours" + minutes + " minutes" + seconds + " seconds"  + ".");
+                sender.sendMessage(ChatColor.AQUA + "Games Quit" + ChatColor.YELLOW + ": " + ChatColor.GOLD +  target.getStatistic(Statistic.LEAVE_GAME));
             } else {
-            sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "You do not have permission to run that command");
+            sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + " You do not have permission to run that command");
             }
         return true;
         }

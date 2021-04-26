@@ -3,6 +3,10 @@ version: ${project.version}
 main: com.quacktopia.quacksaftey.QuackSaftey
 api-version: 1.16
 authors: [hicupalot]
+depend:
+  - LuckPerms
+  - Essentials
+  - Vault
 commands:
   didibreakit:
     description: Tells you if you really messed it up
@@ -31,9 +35,17 @@ commands:
     usage: /<command> <player>
     aliases: [totalplaytime]
     permission: quacksafety.playtime
+  Watchlist:
+    description: Adds a player to the watchlist
+    usage: /<command> <player>
+    permission: quacksafety.watchlist
+  watchlistremove:
+    description: Removes a player from the watchlist
+    usage: /<command> <player>
+    permission: quacksafety.watchlist
 
   permissions:
-      quacksafety.speedingticket:
+    quacksafety.speedingticket:
          descritpion: 'Lets you see the broadcast of speeding players'
          default: op
       quacksafety.armorstandbypass:
@@ -53,4 +65,7 @@ commands:
         default: op
       quacksafety.paintingbypass:
         description: 'Allows you to bypass the Painting Warning'
+        default: op
+      quacksafety.staff:
+        description: "The generic Staff permission"
         default: op

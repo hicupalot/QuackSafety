@@ -2,8 +2,14 @@ package com.quacktopia.quacksaftey;
 
 import com.quacktopia.quacksaftey.commands.*;
 import com.quacktopia.quacksaftey.inhibitors.*;
+import events.StaffJoin;
+import net.milkbowl.vault.chat.Chat;
+import net.milkbowl.vault.economy.Economy;
+import net.milkbowl.vault.economy.EconomyResponse;
+import net.milkbowl.vault.permission.Permission;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.ArrayList;
@@ -31,8 +37,9 @@ public final class QuackSaftey extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new LaggOmeter(), this);
         getServer().getPluginManager().registerEvents(new SpeedLimit(), this);
         getServer().getPluginManager().registerEvents(new commandprefix(), this);
+        getServer().getPluginManager().registerEvents(new StaffJoin(), this);
         System.out.println(ChatColor.GOLD + "[QuackSafety] Inhibitors and Events loaded");
-        System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey v" + getDescription().getAPIVersion() + "By Authors" + getDescription().getAuthors());
+        System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey v" + getDescription().getAPIVersion() + " By Authors" + getDescription().getAuthors());
     }
 
     @Override

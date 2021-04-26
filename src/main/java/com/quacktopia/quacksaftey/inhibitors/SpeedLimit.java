@@ -4,10 +4,12 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
+import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerVelocityEvent;
 import org.bukkit.inventory.ItemStack;
 
@@ -15,10 +17,10 @@ import java.util.HashMap;
 import java.util.UUID;
 
 public class SpeedLimit implements Listener {
-    @SuppressWarnings("deprecation")
-    private HashMap<UUID, Long> cooldownspeed = new HashMap<UUID,Long>();
+    private HashMap<UUID, Long> cooldownspeed = new HashMap<UUID, Long>();
     private int cooldowntime = 3600;
-    private HashMap<UUID, Long> flycooldown = new HashMap<UUID,Long>();
+    private HashMap<UUID, Long> flycooldown = new HashMap<UUID, Long>();
+
     @EventHandler(priority = EventPriority.LOW)
     public void speedingticket(PlayerVelocityEvent e) {
         Player p = e.getPlayer();
@@ -45,6 +47,7 @@ public class SpeedLimit implements Listener {
             }
         }
     }
+
     @EventHandler
     @SuppressWarnings("deprecation")
     public void flyingspeedticket(PlayerVelocityEvent e) {
@@ -65,6 +68,7 @@ public class SpeedLimit implements Listener {
             }
         }
     }
+
     @EventHandler(priority = EventPriority.NORMAL)
     @SuppressWarnings("deprecation")
     public void majorspeedingviolation(PlayerVelocityEvent e) {
@@ -75,7 +79,7 @@ public class SpeedLimit implements Listener {
         }
     }
 
-    @EventHandler (priority = EventPriority.HIGH)
+    @EventHandler(priority = EventPriority.HIGH)
     public void speedbootsviolation(PlayerVelocityEvent e) {
         if (e.getVelocity().lengthSquared() > 15) {
             if (!e.getPlayer().getInventory().getBoots().getType().isEmpty()) {
