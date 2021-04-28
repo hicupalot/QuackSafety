@@ -1,7 +1,9 @@
 package com.quacktopia.quacksaftey;
 
+import com.plotsquared.core.api.PlotAPI;
 import com.quacktopia.quacksaftey.commands.*;
 import com.quacktopia.quacksaftey.inhibitors.*;
+import events.LavaPlace;
 import events.StaffJoin;
 import net.milkbowl.vault.chat.Chat;
 import net.milkbowl.vault.economy.Economy;
@@ -38,6 +40,7 @@ public final class QuackSaftey extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SpeedLimit(), this);
         getServer().getPluginManager().registerEvents(new commandprefix(), this);
         getServer().getPluginManager().registerEvents(new StaffJoin(), this);
+        getServer().getPluginManager().registerEvents(new LavaPlace(), this);
         System.out.println(ChatColor.GOLD + "[QuackSafety] Inhibitors and Events loaded");
         System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey v" + getDescription().getAPIVersion() + " By Authors" + getDescription().getAuthors());
     }
