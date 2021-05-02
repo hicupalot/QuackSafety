@@ -1,6 +1,5 @@
 package events;
 
-import com.plotsquared.core.PlotSquared;
 import com.plotsquared.core.events.PlayerEnterPlotEvent;
 import com.plotsquared.core.events.PlotPlayerEvent;
 import com.plotsquared.core.plot.Plot;
@@ -25,8 +24,11 @@ public class LavaPlace implements Listener {
         Plot plot = Plot.getPlot(loc);
         plot.isAdded(e.getPlayer().getUniqueId());
         Player player = e.getPlayer();
-        if (loc.isPlotArea()) {
+        if (loc.isPlotArea() && !loc.isPlotRoad()) {
         if (e.getBlockPlaced().isLiquid() && !plot.getMembers().isEmpty() && !plot.getTrusted().isEmpty()){
+            if (e.getPlayer().getUniqueId() == plot.getOwner()) {
+                return;
+            }
             Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "STAFF" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly griefing" +
                     " by placing " + e.getBlockPlaced() + "on a plot", "quacksafety.lavanotify");
         }
