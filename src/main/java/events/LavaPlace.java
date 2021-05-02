@@ -17,7 +17,7 @@ import java.util.Objects;
 public class LavaPlace implements Listener {
     @EventHandler
     @SuppressWarnings("deprecated")
-    public void Lava(BlockPlaceEvent e){
+    public void Lava(BlockPlaceEvent e) {
         Location loc = null;
         assert false;
         loc.isPlotArea();
@@ -25,13 +25,14 @@ public class LavaPlace implements Listener {
         plot.isAdded(e.getPlayer().getUniqueId());
         Player player = e.getPlayer();
         if (loc.isPlotArea() && !loc.isPlotRoad()) {
-        if (e.getBlockPlaced().isLiquid() && !plot.getMembers().isEmpty() && !plot.getTrusted().isEmpty()){
-            if (e.getPlayer().getUniqueId() == plot.getOwner()) {
-                return;
+            if (e.getBlockPlaced().isLiquid()) {
+                if (plot.isAdded(e.getPlayer().getUniqueId())) {
+                    if (e.getPlayer().getUniqueId() != plot.getOwner()) {
+                        Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "STAFF" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly griefing" +
+                                " by placing " + e.getBlockPlaced() + "on a plot", "quacksafety.lavanotify");
+                    }
+                }
             }
-            Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "STAFF" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly griefing" +
-                    " by placing " + e.getBlockPlaced() + "on a plot", "quacksafety.lavanotify");
-        }
         }
     }
 }
