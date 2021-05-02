@@ -67,9 +67,6 @@ commands:
       quacksafety.paintingbypass:
         description: 'Allows you to bypass the Painting Warning'
         default: op
-      quacksafety.staff:
-        description: "The generic Staff permission"
-        default: op
       quacksafety.lavanotify:
         description: "Notifies of lava place in PlotArea"
         default: op
