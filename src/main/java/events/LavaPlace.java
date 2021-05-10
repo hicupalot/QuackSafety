@@ -27,8 +27,8 @@ public class LavaPlace implements Listener {
         if (loc.isPlotArea() && !loc.isPlotRoad()) {
             if (e.getBlockPlaced().isLiquid()) {
                 if (plot.isAdded(e.getPlayer().getUniqueId())) {
-                    if (e.getPlayer().getUniqueId() != plot.getOwner()) {
-                        Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "STAFF" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly griefing" +
+                    if (player.getUniqueId() != plot.getOwner()) {
+                        Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "STAFF" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + player.getName() + " is possibly griefing" +
                                 " by placing " + e.getBlockPlaced() + "on a plot", "quacksafety.lavanotify");
                     }
                 }

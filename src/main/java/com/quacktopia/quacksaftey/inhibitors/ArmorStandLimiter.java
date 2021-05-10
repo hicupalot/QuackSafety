@@ -1,7 +1,5 @@
 package com.quacktopia.quacksaftey.inhibitors;
 
-import com.destroystokyo.paper.event.entity.EntityPathfindEvent;
-import net.minecraft.server.v1_16_R3.FluidTypeFlowing;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.block.BlockFace;
@@ -34,19 +32,20 @@ public class ArmorStandLimiter implements Listener {
                     }
                     if (numberofarmorstands > 5) {
                         e.setCancelled(true);
-                        e.getPlayer().sendMessage(ChatColor.BLUE + "You have reached the maximum of 5 armour stands in a chunk");
+                        e.getPlayer().sendMessage(ChatColor.GOLD + "[Quack]:" + ChatColor.BLUE + "You have reached the maximum of 5 armour stands in a chunk");
                     }
 
                 }
 
             }
         }
+    }
+
+    @EventHandler
+    public void ArmorStandWater(EntityChangeBlockEvent e) {
+        if (e.getBlock().getRelative(BlockFace.DOWN).getType().equals(Material.WATER) && e.getEntityType().equals(EntityType.ARMOR_STAND)) {
+            e.getEntity().setGravity(false);
         }
-@EventHandler
-public void ArmorStandWater(EntityChangeBlockEvent e){
-  if (e.getBlock().getRelative(BlockFace.DOWN).getType().equals(Material.WATER) && e.getEntityType().equals(EntityType.ARMOR_STAND)) {
-  e.setCancelled(true);
-  }
-  }
+    }
 }
 

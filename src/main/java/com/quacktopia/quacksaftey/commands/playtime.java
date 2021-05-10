@@ -11,9 +11,14 @@ import org.bukkit.entity.Player;
 public class playtime implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender.hasPermission("quacksafety.playtime")) {
-            String username = args[0];
-                Player target = Bukkit.getServer().getPlayer(args[0]);
-            if (args.length < 1) {
+            String username = args[1];
+                Player target = Bukkit.getServer().getPlayer(args[1]);
+                Player player = (Player) sender;
+            if (args.length == 0) {
+                sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "Please do /playtime (player)");
+                return true;
+            }
+            if (args.length>2){
                 sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "Please do /playtime (player)");
                 return true;
             }
