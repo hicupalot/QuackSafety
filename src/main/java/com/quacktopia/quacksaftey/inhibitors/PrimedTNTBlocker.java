@@ -8,10 +8,9 @@ import org.bukkit.event.entity.EntitySpawnEvent;
 public class PrimedTNTBlocker implements Listener{
 
     @EventHandler
-    public void primedTNTStop(EntitySpawnEvent e)
-    {
+    public void primedTNTStop(EntitySpawnEvent e) {
         if(e.getEntityType() == EntityType.PRIMED_TNT)
-            e.setCancelled(true);
+        e.setCancelled(true);
         //Stops Primed TNT
     }
 }

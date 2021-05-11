@@ -36,7 +36,7 @@ public class EventChecker implements Listener {
         e.setCancelled(true);
     }
     @EventHandler
-    public void Piston(BlockPistonExtendEvent e) {
+    public void PistonOut(BlockPistonExtendEvent e) {
         e.setCancelled(true);
     }
     @EventHandler

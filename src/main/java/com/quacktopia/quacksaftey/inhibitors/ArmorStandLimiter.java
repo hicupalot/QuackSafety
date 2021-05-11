@@ -32,7 +32,7 @@ public class ArmorStandLimiter implements Listener {
                     }
                     if (numberofarmorstands > 5) {
                         e.setCancelled(true);
-                        e.getPlayer().sendMessage(ChatColor.GOLD + "[Quack]:" + ChatColor.BLUE + "You have reached the maximum of 5 armour stands in a chunk");
+                        e.getPlayer().sendMessage(ChatColor.GOLD + "[Quack]" + ChatColor.BLUE + " You have reached the maximum of 5 armour stands in a chunk");
                     }
 
                 }

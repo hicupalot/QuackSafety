@@ -9,7 +9,7 @@ public class plugintest implements CommandExecutor {
         if (sender.hasPermission("quacksafety.doesitwork")) {
             sender.sendMessage(ChatColor.RED + "[QUACKSAFETY] You haven't broken it Hicup!" + "Your user is" + sender.getName());
         } else {
-            sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "You do not have permission to run that command");
+            sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + " You do not have permission to run that command");
         }
         return true;
 

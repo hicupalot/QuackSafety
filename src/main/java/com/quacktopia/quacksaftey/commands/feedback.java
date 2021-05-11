@@ -11,7 +11,7 @@ public class feedback implements CommandExecutor {
             sender.sendMessage(ChatColor.GOLD + "[Quack] If you have any feedback/bugs/suggestions" +
                     " about the server please put them here"+ ChatColor.AQUA+" https://quacktopia.com/feedback");
         } else {
-            sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "You do not have permission to run that command");
+            sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + " You do not have permission to run that command");
         }
         return true;
 

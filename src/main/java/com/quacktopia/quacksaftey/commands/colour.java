@@ -30,7 +30,7 @@ public class colour implements CommandExecutor {
             sender.sendMessage(ChatColor.WHITE + "[Quack] The colour code for underline is &n");
             sender.sendMessage(ChatColor.WHITE + "[Quack] The colour code for white is &f");
         } else {
-            sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "You do not have permission to run that command");
+            sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + " You do not have permission to run that command");
         }
         return true;
 
