@@ -3,6 +3,7 @@ package com.quacktopia.quacksaftey;
 import com.quacktopia.quacksaftey.commands.*;
 import com.quacktopia.quacksaftey.inhibitors.*;
 import events.LavaPlace;
+import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,6 +19,7 @@ public final class QuackSaftey extends JavaPlugin {
         getCommand("discord").setExecutor(new discord());
         getCommand("feedback").setExecutor(new feedback());
         getCommand("playtime").setExecutor(new playtime());
+        getCommand("serverinfo").setExecutor(new ServerInfo());
         System.out.println(ChatColor.GOLD + "[QuackSafety] Commands Loaded");
         getServer().getPluginManager().registerEvents(new ProjectileInhibitor(), this);
         getServer().getPluginManager().registerEvents(new PrimedTNTBlocker(), this);

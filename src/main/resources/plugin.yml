@@ -36,37 +36,36 @@ commands:
     usage: /<command> <player>
     aliases: [totalplaytime]
     permission: quacksafety.playtime
-  Watchlist:
-    description: Adds a player to the watchlist
-    usage: /<command> <player>
-    permission: quacksafety.watchlist
-  watchlistremove:
-    description: Removes a player from the watchlist
-    usage: /<command> <player>
-    permission: quacksafety.watchlist
-
+  ServerInfo:
+    description: Provides you with server info
+    usage: /serverinfo
+    aliases: [si]
+    permission: quacksafety.serverinfo
   permissions:
     quacksafety.speedingticket:
          descritpion: 'Lets you see the broadcast of speeding players'
          default: op
-      quacksafety.armorstandbypass:
+    quacksafety.armorstandbypass:
         description: 'Lets you bypass the 5 armour stands a chunk limit'
         default: op
-      quacksafety.bookbypass:
+    quacksafety.bookbypass:
         description: 'Lets you bypass the book ban'
         default: op
-      quacksafety.itemframebypass:
+    quacksafety.itemframebypass:
         description: 'Lets you bypass the item frame warning'
         default: op
-      quacksafety.dropitembypass:
+    quacksafety.dropitembypass:
         description: 'Lets you bypass the ItemDrop Warning'
         default: op
-      quacksafety.laggometer:
+    quacksafety.laggometer:
         description: 'Allows you to view the lagg warnings'
         default: op
-      quacksafety.paintingbypass:
+    quacksafety.paintingbypass:
         description: 'Allows you to bypass the Painting Warning'
         default: op
-      quacksafety.lavanotify:
+    quacksafety.lavanotify:
         description: "Notifies of lava place in PlotArea"
         default: op
+    quacksafety.serverinfo:
+      description: Provides you with server information
+      default: op
