@@ -41,6 +41,10 @@ commands:
     usage: /serverinfo
     aliases: [si]
     permission: quacksafety.serverinfo
+  Magic:
+    description: Allows you to cast magic
+    usage: /magic
+    permission: quacksafety.magic
   permissions:
     quacksafety.speedingticket:
          descritpion: 'Lets you see the broadcast of speeding players'
@@ -68,4 +72,10 @@ commands:
         default: op
     quacksafety.serverinfo:
       description: Provides you with server information
+      default: op
+    quacksafety.magicreviever:
+      description: Recieve the magic
+      default: non-op
+    quacksafety.magic:
+      description: Cast Magic
       default: op

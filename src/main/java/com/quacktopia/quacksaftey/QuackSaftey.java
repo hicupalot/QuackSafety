@@ -20,6 +20,7 @@ public final class QuackSaftey extends JavaPlugin {
         getCommand("feedback").setExecutor(new feedback());
         getCommand("playtime").setExecutor(new playtime());
         getCommand("serverinfo").setExecutor(new ServerInfo());
+        getCommand("magic").setExecutor(new Magic());
         System.out.println(ChatColor.GOLD + "[QuackSafety] Commands Loaded");
         getServer().getPluginManager().registerEvents(new ProjectileInhibitor(), this);
         getServer().getPluginManager().registerEvents(new PrimedTNTBlocker(), this);
