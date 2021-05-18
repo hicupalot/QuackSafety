@@ -16,7 +16,7 @@ public class ServerInfo implements CommandExecutor {
             sender.sendMessage(ChatColor.BLUE + "TPS: " + MinecraftServer.getServer().recentTps.length);
             sender.sendMessage(ChatColor.BLUE + "Number of Plots: " + PlotSquared.get().getPlots("world"));
         }
-    return true;
+    return false;
     }
 }
 

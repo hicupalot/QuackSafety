@@ -13,7 +13,7 @@ public class feedback implements CommandExecutor {
         } else {
             sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + " You do not have permission to run that command");
         }
-        return true;
+        return false;
 
     }
 

@@ -18,7 +18,7 @@ public class barriergiver implements CommandExecutor {
             sender.sendMessage(ChatColor.GOLD + "[QUACK] You have been given a Barrier");
         } else {
             sender.sendMessage(ChatColor.RED + "[QUACK] This is a Player Only Command");
-            return true;
+            return false;
         }
         return false;
     }
