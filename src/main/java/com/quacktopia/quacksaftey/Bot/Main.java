@@ -11,7 +11,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import javax.security.auth.login.LoginException;
 import java.util.Objects;
 
-public class Main extends JavaPlugin {
+public class Main{
     public static void main(String[] args) throws LoginException, InterruptedException {
         JDABuilder builder = JDABuilder.createLight(Config.get("token"));
         JDA jda;

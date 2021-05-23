@@ -113,3 +113,4 @@ buildNumber.properties
 run/
 /src/main/resources/config.properties
 /src/main/resources/.env
+/src/main/resources/config.yml
