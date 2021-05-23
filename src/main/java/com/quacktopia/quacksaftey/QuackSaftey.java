@@ -1,17 +1,22 @@
 package com.quacktopia.quacksaftey;
 
+import com.quacktopia.quacksaftey.Bot.MinecraftToDiscord;
 import com.quacktopia.quacksaftey.commands.*;
 import com.quacktopia.quacksaftey.inhibitors.*;
 import events.LavaPlace;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.util.Objects;
 
 public final class QuackSaftey extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        this.saveDefaultConfig();
+        this.getConfig().get("token");
         System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey plugin booting up on v" + getDescription().getAPIVersion());
         getCommand("didibreakit").setExecutor(new plugintest());
         getCommand("barrier").setExecutor(new barriergiver());
@@ -21,6 +26,7 @@ public final class QuackSaftey extends JavaPlugin {
         getCommand("playtime").setExecutor(new playtime());
         getCommand("serverinfo").setExecutor(new ServerInfo());
         getCommand("magic").setExecutor(new Magic());
+        getCommand("staffhelp").setExecutor(new MinecraftToDiscord());
         System.out.println(ChatColor.GOLD + "[QuackSafety] Commands Loaded");
         getServer().getPluginManager().registerEvents(new ProjectileInhibitor(), this);
         getServer().getPluginManager().registerEvents(new PrimedTNTBlocker(), this);
@@ -37,7 +43,6 @@ public final class QuackSaftey extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
         System.out.println(ChatColor.RED + "[QuackSaftey] QuackSaftey plugin shutting down");
     }
 }

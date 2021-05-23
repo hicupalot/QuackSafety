@@ -45,6 +45,11 @@ commands:
     description: Allows you to cast magic
     usage: /magic
     permission: quacksafety.magic
+  HelperHelp:
+    description: Sends message to Discord
+    usage: /helperhelp
+    permission: quacksafety.helperhelp
+    aliases: [hh,staffhelp]
   permissions:
     quacksafety.speedingticket:
          descritpion: 'Lets you see the broadcast of speeding players'
