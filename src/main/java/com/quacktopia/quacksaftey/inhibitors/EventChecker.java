@@ -12,6 +12,7 @@ import org.bukkit.event.entity.LingeringPotionSplashEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerCommandSendEvent;
 import org.bukkit.event.player.PlayerRecipeDiscoverEvent;
+import org.bukkit.event.world.PortalCreateEvent;
 import org.bukkit.event.world.StructureGrowEvent;
 
 public class EventChecker implements Listener {
@@ -41,6 +42,10 @@ public class EventChecker implements Listener {
     }
     @EventHandler
     public void PistonIn(BlockPistonRetractEvent e) {
+        e.setCancelled(true);
+    }
+    @EventHandler
+    public void NetherPortal(PortalCreateEvent e){
         e.setCancelled(true);
     }
 }
