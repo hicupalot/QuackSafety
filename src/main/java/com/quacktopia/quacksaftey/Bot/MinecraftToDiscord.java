@@ -21,10 +21,11 @@ public class MinecraftToDiscord implements CommandExecutor {
                 sender.sendMessage(ChatColor.RED + "Please provide a message you wish to ask the other Helpers on the Discord");
                 return false;
             }
-        if (args.length > 1){
-            sender.sendMessage(ChatColor.RED+"Please use /staffhelp (message)");
-            return false;
-        }
+            if (args.length > 1) {
+                sender.sendMessage(ChatColor.RED + "Please use /staffhelp (message)");
+                return false;
+            }
+            if (MTD.getTextChannelById("812756243957284914") != null) ;
         MTD.getTextChannelById("812756243957284914").sendMessage("HelperHelp: "+ sender.getName() + " requires help: "+ stb.toString().trim()+ "!").queue();
         }
             else {
