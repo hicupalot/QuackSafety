@@ -9,7 +9,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.meta.BookMeta;
 
-public class bookban implements Listener {
+public class BookBan implements Listener {
     @EventHandler
     public void BookBan(PlayerInteractEvent e) {
         if(e.getPlayer().hasPermission("quacksafety.bookbypass"))

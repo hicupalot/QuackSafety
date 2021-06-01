@@ -25,7 +25,7 @@ public class playtime implements CommandExecutor {
                     return false;
                 }
                 if (target == null) {
-                    sender.sendMessage(ChatColor.GOLD + "QUACK" + ChatColor.RED + "You must supply a valid Player");
+                    sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "You must supply a valid Player");
                     return false;
                 }
                 target.getStatistic(Statistic.PLAY_ONE_MINUTE); //ticks played not minutes [always divide by 20]

@@ -1,4 +1,4 @@
-package events;
+package plots;
 
 import com.plotsquared.core.events.PlayerEnterPlotEvent;
 import com.plotsquared.core.events.PlotPlayerEvent;
@@ -12,7 +12,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
 
+import java.util.HashMap;
 import java.util.Objects;
+import java.util.UUID;
 
 public class LavaPlace implements Listener {
     @EventHandler

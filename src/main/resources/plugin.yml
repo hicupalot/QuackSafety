@@ -76,11 +76,20 @@ commands:
         description: "Notifies of lava place in PlotArea"
         default: op
     quacksafety.serverinfo:
-      description: Provides you with server information
+      description: "Provides you with server information"
       default: op
     quacksafety.magicreviever:
-      description: Recieve the magic
+      description: "Recieve the magic"
       default: non-op
     quacksafety.magic:
-      description: Cast Magic
+      description: "Cast Magic"
+      default: op
+    quacksafety.auth:
+      description: "Requires 2FA on login"
+      default: op
+    quacksafety.adminauth:
+      description: "Resets a 2FA code for a player"
+      default: op
+    quacksafety.staff:
+      description: "Generic Staff Perms"
       default: op

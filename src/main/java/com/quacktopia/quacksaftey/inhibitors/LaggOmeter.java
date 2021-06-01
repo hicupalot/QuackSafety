@@ -14,10 +14,8 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.EquipmentSlot;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 @SuppressWarnings("deprecation")
     public class LaggOmeter implements Listener {
@@ -43,23 +41,14 @@ import java.util.concurrent.TimeUnit;
                             numberofitemframes++;
                         }
                     }
-                    if (numberofitemframes == 100) {
+                    if (numberofitemframes == 250) {
                         Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by placing " +
-                                " 100 Item Frames in a single chunk", "quacksafety.laggometer");
-                        cooldown.put(p.getUniqueId(), System.currentTimeMillis());
-
+                                " 250 Item Frames in a single chunk", "quacksafety.laggometer");
+                        return;
                     }
-                    if (numberofitemframes > 100) {
-                        if (cooldown.containsKey(p.getUniqueId())) {
-                            long secondsleft = (System.currentTimeMillis() - cooldown.get(p.getUniqueId()));
-                            if (secondsleft <= 0) {
-                                Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by placing " +
-                                        " more than 100 Item Frames in a single chunk", "quacksafety.laggometer");
-                                cooldown.put(p.getUniqueId(), System.currentTimeMillis());
-                            } else {
-                                return;
-                            }
-                        }
+                    if (numberofitemframes > 250) {
+                        Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "LAG-O-METER" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + e.getPlayer().getName() + " is possibly trying to exploit the server by placing " +
+                                " more than 250 Item Frames in a single chunk", "quacksafety.laggometer");
                     }
                 }
             }
@@ -135,7 +124,12 @@ import java.util.concurrent.TimeUnit;
                     }
                 }
             }
-
         }
     }
 }
+
+//    @EventHandler
+ //   public void TPS(ServerEvent e) {
+  //      if (MinecraftServer.getServer().recentTps.length < 10) {
+ //           Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "CRITICAL" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + "the server TPS has dipped below 10!", "quacksafety.tps warning");
+  //          System.out.println(ChatColor.GOLD + "[QuackSafety]" + ChatColor.RED+ "THE TPS HAS DIPPED BELOW 10!");

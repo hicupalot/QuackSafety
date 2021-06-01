@@ -22,8 +22,8 @@ public class ServerInfo implements CommandExecutor {
                 sender.sendMessage(ChatColor.BLUE + "Number of Plots: " + PlotSquared.get().getPlots("world"));
             } else {
                 sender.sendMessage(ChatColor.RED + "You do not have permission to perform this");
+                return false;
             }
-            return false;
         }
         return false;
     }
