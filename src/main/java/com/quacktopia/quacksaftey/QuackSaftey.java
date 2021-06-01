@@ -1,6 +1,6 @@
 package com.quacktopia.quacksaftey;
 
-import com.quacktopia.quacksaftey.Bot.MinecraftToDiscord;
+import com.quacktopia.quacksaftey.bot.MinecraftToDiscord;
 import com.quacktopia.quacksaftey.authentication.GoogleAuth;
 import com.quacktopia.quacksaftey.commands.*;
 import com.quacktopia.quacksaftey.inhibitors.*;

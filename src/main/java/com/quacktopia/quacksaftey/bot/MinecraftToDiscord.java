@@ -1,8 +1,6 @@
-package com.quacktopia.quacksaftey.Bot;
+package com.quacktopia.quacksaftey.bot;
 
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.entities.GuildChannel;
-import net.dv8tion.jda.api.entities.Message;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

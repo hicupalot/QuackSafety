@@ -1,8 +1,6 @@
-package com.quacktopia.quacksaftey.Bot;
+package com.quacktopia.quacksaftey.bot;
 
 import io.github.cdimascio.dotenv.Dotenv;
-
-import java.util.List;
 
 public class Config {
     private static final Dotenv dotenv = Dotenv.load();

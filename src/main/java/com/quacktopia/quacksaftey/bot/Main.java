@@ -1,4 +1,4 @@
-package com.quacktopia.quacksaftey.Bot;
+package com.quacktopia.quacksaftey.bot;
 
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
