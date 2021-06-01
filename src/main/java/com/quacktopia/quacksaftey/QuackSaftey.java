@@ -4,8 +4,8 @@ import com.quacktopia.quacksaftey.Bot.MinecraftToDiscord;
 import com.quacktopia.quacksaftey.authentication.GoogleAuth;
 import com.quacktopia.quacksaftey.commands.*;
 import com.quacktopia.quacksaftey.inhibitors.*;
-import plots.ChorusLimiter;
-import plots.LavaPlace;
+import com.quacktopia.quacksaftey.plots.ChorusLimiter;
+import com.quacktopia.quacksaftey.plots.LavaPlace;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 

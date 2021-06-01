@@ -1,20 +1,13 @@
-package plots;
+package com.quacktopia.quacksaftey.plots;
 
-import com.plotsquared.core.events.PlayerEnterPlotEvent;
-import com.plotsquared.core.events.PlotPlayerEvent;
 import com.plotsquared.core.plot.Plot;
 import com.plotsquared.core.location.*;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockPlaceEvent;
-
-import java.util.HashMap;
-import java.util.Objects;
-import java.util.UUID;
 
 public class LavaPlace implements Listener {
     @EventHandler

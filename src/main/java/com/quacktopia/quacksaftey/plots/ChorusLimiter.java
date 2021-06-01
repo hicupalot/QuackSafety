@@ -1,4 +1,4 @@
-package plots;
+package com.quacktopia.quacksaftey.plots;
 
 import com.plotsquared.core.location.Location;
 import com.plotsquared.core.plot.Plot;
@@ -7,9 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.entity.EntityTeleportEvent;
 import org.bukkit.event.player.PlayerItemConsumeEvent;
-import org.bukkit.event.player.PlayerTeleportEvent;
 import org.bukkit.inventory.ItemStack;
 
 public class ChorusLimiter implements Listener {
@@ -26,7 +24,7 @@ public class ChorusLimiter implements Listener {
                 if (!p.hasPermission("quacksafety.staff")) {
                     if (!plot.getOwner().equals(e.getPlayer().getUniqueId()) || !plot.isAdded(e.getPlayer().getUniqueId()) || !plot.getTrusted().contains(e.getPlayer().getUniqueId())) {
                         e.setCancelled(true);
-                        p.sendMessage(ChatColor.GOLD + "[QUACK] " + "the use of chorus fruit is only enabled on plots you can build on!");
+                        p.sendMessage(ChatColor.GOLD + "[QUACK] " + "the use of chorus fruit is only enabled on com.quacktopia.quacksaftey.plots you can build on!");
                     }
                 }
             }
