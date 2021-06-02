@@ -28,7 +28,7 @@ public class playtime implements CommandExecutor {
                     sender.sendMessage(ChatColor.GOLD + "[QUACK]" + ChatColor.RED + "You must supply a valid Player");
                     return false;
                 }
-                target.getStatistic(Statistic.PLAY_ONE_MINUTE); //ticks played not minutes [always divide by 20]
+                target.getStatistic(Statistic.PLAY_ONE_MINUTE); //ticks played not minutes [always divide by 20 to get seconds]
                 long ticks = target.getStatistic(Statistic.PLAY_ONE_MINUTE);
                 long s = ticks / 20;
                 long seconds = (s % (60 * 60));

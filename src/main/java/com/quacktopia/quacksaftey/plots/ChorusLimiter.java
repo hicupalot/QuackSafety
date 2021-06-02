@@ -24,7 +24,7 @@ public class ChorusLimiter implements Listener {
                 if (!p.hasPermission("quacksafety.staff")) {
                     if (!plot.getOwner().equals(e.getPlayer().getUniqueId()) || !plot.isAdded(e.getPlayer().getUniqueId()) || !plot.getTrusted().contains(e.getPlayer().getUniqueId())) {
                         e.setCancelled(true);
-                        p.sendMessage(ChatColor.GOLD + "[QUACK] " + "the use of chorus fruit is only enabled on com.quacktopia.quacksaftey.plots you can build on!");
+                        p.sendMessage(ChatColor.GOLD + "[QUACK] " + "the use of chorus fruit is only enabled on plots you can build on!");
                     }
                 }
             }
