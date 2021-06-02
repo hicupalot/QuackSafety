@@ -50,6 +50,10 @@ commands:
     usage: /helperhelp
     permission: quacksafety.helperhelp
     aliases: [hh,staffhelp]
+  PlotPlayers:
+    description: Sends message containing players in that plot
+    usage: /plotplayers
+    permission: quacksafety.staff
   permissions:
     quacksafety.speedingticket:
          descritpion: 'Lets you see the broadcast of speeding players'
