@@ -55,7 +55,7 @@ public class GoogleAuth extends JavaPlugin implements Listener {
                 this.saveConfig();
             } else {
                 authlocked.add(player.getUniqueId());
-                player.sendMessage(ChatColor.RED + "Please enter the code found in the Google Authenticator App");
+                player.sendMessage(ChatColor.RED + "Please enter the code found in the Google Authenticator App!");
                 player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, 1000000, 255, true, false));
                 player.setWalkSpeed(0);
                 player.setFlySpeed(0);
