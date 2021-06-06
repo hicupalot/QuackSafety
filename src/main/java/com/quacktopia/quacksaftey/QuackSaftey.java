@@ -26,7 +26,7 @@ public final class QuackSaftey extends JavaPlugin {
         getCommand("serverinfo").setExecutor(new ServerInfo());
         getCommand("magic").setExecutor(new Magic());
         getCommand("staffhelp").setExecutor(new MinecraftToDiscord());
-        getCommand("magic").setExecutor(new PlotPlayers());
+        getCommand("PlotPlayers").setExecutor(new PlotPlayers());
         System.out.println(ChatColor.GOLD + "[QuackSafety] Commands Loaded");
         getServer().getPluginManager().registerEvents(new ProjectileInhibitor(), this);
         getServer().getPluginManager().registerEvents(new PrimedTNTBlocker(), this);
@@ -38,7 +38,6 @@ public final class QuackSaftey extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new commandprefix(), this);
         getServer().getPluginManager().registerEvents(new LavaPlace(), this);
         getServer().getPluginManager().registerEvents(new ChorusLimiter(), this);
-        getServer().getPluginManager().registerEvents(new GoogleAuth(), this);
         getServer().getPluginManager().registerEvents(new OpStopper(), this);
         System.out.println(ChatColor.GOLD + "[QuackSafety] Inhibitors and Events loaded");
         System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey v" + getDescription().getAPIVersion() + " By Authors" + getDescription().getAuthors());

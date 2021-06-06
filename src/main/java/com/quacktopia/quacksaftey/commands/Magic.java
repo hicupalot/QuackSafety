@@ -21,15 +21,16 @@ public class Magic implements CommandExecutor {
                     online.getWorld().strikeLightning(online.getLocation());
                     online.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 5, 2, true, false));
                     Bukkit.broadcast(ChatColor.YELLOW + "[" + ChatColor.RED + "MAGIC" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + sender.getName() + " cast Wingardium Leviosa!", "quacksafety.magicreviever");
+                    return false;
                 }
             }
             if (args.length == 1) {
-                Player target = (Player) Bukkit.getServer().getPlayer(args[1]);
+                Player target = Bukkit.getServer().getPlayer(args[1]);
                 target.getWorld().strikeLightning(target.getLocation());
                 target.addPotionEffect(new PotionEffect(PotionEffectType.LEVITATION, 5, 2, true, false));
                 target.sendMessage("[" + ChatColor.RED + "MAGIC" + ChatColor.YELLOW + "]" + ChatColor.LIGHT_PURPLE + "You had Wingardium Leviosa cast on you by " + sender.getName());
             }
-            if (args.length>1){
+            if (args.length>=2){
                 sender.sendMessage(ChatColor.RED+"Please do /magic to cast it on the entire server and /magic player to cast it on the entire server");
             }
             return false;

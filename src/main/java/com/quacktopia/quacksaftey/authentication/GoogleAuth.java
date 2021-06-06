@@ -3,13 +3,11 @@ package com.quacktopia.quacksaftey.authentication;
 import com.warrenstrange.googleauth.GoogleAuthenticator;
 import com.warrenstrange.googleauth.GoogleAuthenticatorKey;
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
-import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -42,7 +40,11 @@ public class GoogleAuth extends JavaPlugin implements Listener {
 
     @EventHandler
     public void Joining(PlayerJoinEvent e) {
-        if (e.getPlayer().hasPermission("quacksafety.auth")) {
+        if (!e.getPlayer().hasPermission("quacksafety.auth")) {
+            authlocked.remove(e.getPlayer().getUniqueId());
+            return;
+        }
+        if (e.getPlayer().hasPermission("quacksafety.auth")){
             Player player = e.getPlayer();
             if (!this.getConfig().contains("authcodes." + player.getUniqueId())) {
                 GoogleAuthenticator gAuth = new GoogleAuthenticator();
@@ -154,20 +156,21 @@ public class GoogleAuth extends JavaPlugin implements Listener {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             if (sender.hasPermission("quacksafety.adminauth") && !authlocked.contains((((Player) sender).getUniqueId()))) {
-                Player target = (Player) Bukkit.getServer().getPlayer(args[1]);
+                Player target = Bukkit.getServer().getPlayer(args[1]);
                 assert target != null;
                 if (target.hasPermission("quacksafety.auth")) {
                     this.getConfig().set("authcodes." + ((Player) sender).getUniqueId(), null);
                     sender.sendMessage(ChatColor.GOLD + "You reset " + target.getName() + "'s authcode");
                     target.sendMessage(ChatColor.RED + "Please rejoin the server due to your authcode being reset!");
-                    MTD.getTextChannelById("817766659279945780").sendMessage(target.getName() + "'s authcode was reset by " + sender.getName()).queue();
+                    if (MTD.getTextChannelById("817766659279945780") != null) {
+                        MTD.getTextChannelById("817766659279945780").sendMessage(target.getName() + "'s authcode was reset by " + sender.getName()).queue();
 
+                    }
                 }
-            }
-            }
-             else {
+            } else {
                 return false;
             }
-            return false;
         }
+            return false;
     }
+}

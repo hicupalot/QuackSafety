@@ -5,12 +5,17 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.BookMeta;
 
 public class colour implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (sender instanceof ConsoleCommandSender) {
+            sender.sendMessage(ChatColor.RED + "This is a GUI, Console can't open GUI's");
+            return false;
+        }
         if (sender instanceof Player) {
             if (sender.hasPermission("quacksafety.colour")) {
                 ItemStack book = new ItemStack(Material.WRITTEN_BOOK, 1);

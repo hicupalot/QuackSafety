@@ -25,7 +25,7 @@ public class PlotPlayers implements CommandExecutor {
                 return false;
             }
         if (sender instanceof Player){
-            sender.sendMessage(ChatColor.GOLD+"QUACK"+ "players in the plot: "+plot.getPlayersInPlot());
+            sender.sendMessage(ChatColor.GOLD+"[QUACK]"+ "players in the plot: "+plot.getPlayersInPlot());
             }
             else {
                 sender.sendMessage(ChatColor.RED + "You do not have permission to perform this command!");
