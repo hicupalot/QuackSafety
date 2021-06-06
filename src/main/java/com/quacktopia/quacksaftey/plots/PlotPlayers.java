@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 public class PlotPlayers implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof ConsoleCommandSender){
-            sender.sendMessage(ChatColor.GOLD + "You can't execute this command from the console!");
+            sender.sendMessage(ChatColor.GOLD + " You can't are console, you are simultaneously nowhere and everywhere!");
         return false;
     }
         Location loc = null;
@@ -25,7 +25,7 @@ public class PlotPlayers implements CommandExecutor {
                 return false;
             }
         if (sender instanceof Player){
-            sender.sendMessage(ChatColor.GOLD+"[QUACK]"+ "players in the plot: "+plot.getPlayersInPlot());
+            sender.sendMessage(ChatColor.GOLD+"[QUACK] "+ "players in the plot: "+ plot.getPlayersInPlot());
             }
             else {
                 sender.sendMessage(ChatColor.RED + "You do not have permission to perform this command!");
