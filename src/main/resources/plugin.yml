@@ -54,6 +54,9 @@ commands:
     description: Sends message containing players in that plot
     usage: /plotplayers
     permission: quacksafety.staff
+  PermCheck:
+    description: Checks if YOU messed up or your Permissions Handler Messed up!
+    usage: /permcheck
   permissions:
     quacksafety.speedingticket:
          descritpion: 'Lets you see the broadcast of speeding players'

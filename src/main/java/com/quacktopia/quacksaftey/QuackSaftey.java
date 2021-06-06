@@ -8,6 +8,7 @@ import com.quacktopia.quacksaftey.plots.ChorusLimiter;
 import com.quacktopia.quacksaftey.plots.LavaPlace;
 import com.quacktopia.quacksaftey.plots.PlotPlayers;
 import org.bukkit.ChatColor;
+import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class QuackSaftey extends JavaPlugin {
@@ -27,6 +28,7 @@ public final class QuackSaftey extends JavaPlugin {
         getCommand("magic").setExecutor(new Magic());
         getCommand("staffhelp").setExecutor(new MinecraftToDiscord());
         getCommand("PlotPlayers").setExecutor(new PlotPlayers());
+        getCommand("PermCheck").setExecutor(new QuackSafetyPermCheck());
         System.out.println(ChatColor.GOLD + "[QuackSafety] Commands Loaded");
         getServer().getPluginManager().registerEvents(new ProjectileInhibitor(), this);
         getServer().getPluginManager().registerEvents(new PrimedTNTBlocker(), this);
