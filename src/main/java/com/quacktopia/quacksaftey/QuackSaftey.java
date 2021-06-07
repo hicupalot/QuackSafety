@@ -42,7 +42,7 @@ public final class QuackSaftey extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ChorusLimiter(), this);
         getServer().getPluginManager().registerEvents(new OpStopper(), this);
         System.out.println(ChatColor.GOLD + "[QuackSafety] Inhibitors and Events loaded");
-        System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey v" + getDescription().getAPIVersion() + " By Authors" + getDescription().getAuthors());
+        System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey v" + getDescription().getVersion() + " By Authors" + getDescription().getAuthors());
     }
 
     @Override
