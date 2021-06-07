@@ -75,8 +75,8 @@ public class GoogleAuth extends JavaPlugin implements Listener {
         if (codeisvalid) {
             authlocked.remove(player.getUniqueId());
             player.removePotionEffect(PotionEffectType.BLINDNESS);
-            player.setFlySpeed(0.1f);
-            player.setWalkSpeed(0.2f);
+            player.setFlySpeed(0.1f); //default flyspeed
+            player.setWalkSpeed(0.2f); //default walkspeed
             return codeisvalid;
         }
         return codeisvalid;
@@ -152,14 +152,20 @@ public class GoogleAuth extends JavaPlugin implements Listener {
             }
         }
     }
+    @EventHandler
+    public void TP(PlayerTeleportEvent e){
+        if (authlocked.contains(e.getPlayer().getUniqueId())){
+            e.setCancelled(true);
+        }
+    }
 
-    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (sender instanceof Player) {
+        public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (sender instanceof Player || sender instanceof ConsoleCommandSender) {
             if (sender.hasPermission("quacksafety.adminauth") && !authlocked.contains((((Player) sender).getUniqueId()))) {
                 Player target = Bukkit.getServer().getPlayer(args[1]);
                 assert target != null;
                 if (target.hasPermission("quacksafety.auth")) {
-                    this.getConfig().set("authcodes." + ((Player) sender).getUniqueId(), null);
+                    this.getConfig().set("authcodes." + target.getUniqueId(), null);
                     sender.sendMessage(ChatColor.GOLD + "You reset " + target.getName() + "'s authcode");
                     target.sendMessage(ChatColor.RED + "Please rejoin the server due to your authcode being reset!");
                     if (MTD.getTextChannelById("817766659279945780") != null) {
@@ -167,7 +173,7 @@ public class GoogleAuth extends JavaPlugin implements Listener {
 
                     }
                 }
-            } else {
+            } else{
                 return false;
             }
         }
