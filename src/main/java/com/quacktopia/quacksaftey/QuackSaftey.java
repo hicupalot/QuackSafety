@@ -1,16 +1,15 @@
 package com.quacktopia.quacksaftey;
 
 import com.quacktopia.quacksaftey.bot.MinecraftToDiscord;
-import com.quacktopia.quacksaftey.authentication.GoogleAuth;
 import com.quacktopia.quacksaftey.commands.*;
 import com.quacktopia.quacksaftey.inhibitors.*;
 import com.quacktopia.quacksaftey.plots.ChorusLimiter;
 import com.quacktopia.quacksaftey.plots.LavaPlace;
 import com.quacktopia.quacksaftey.plots.PlotPlayers;
 import org.bukkit.ChatColor;
-import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
 
+@SuppressWarnings("unused")
 public final class QuackSaftey extends JavaPlugin {
 
     @Override
@@ -42,7 +41,7 @@ public final class QuackSaftey extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ChorusLimiter(), this);
         getServer().getPluginManager().registerEvents(new OpStopper(), this);
         System.out.println(ChatColor.GOLD + "[QuackSafety] Inhibitors and Events loaded");
-        System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey v" + getDescription().getAPIVersion() + " By Authors" + getDescription().getAuthors());
+        System.out.println(ChatColor.GOLD + "[QuackSaftey] QuackSaftey v" + getDescription().getVersion() + " By Authors" + getDescription().getAuthors());
     }
 
     @Override
