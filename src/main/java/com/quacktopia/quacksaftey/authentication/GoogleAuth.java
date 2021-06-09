@@ -166,6 +166,7 @@ public class GoogleAuth extends JavaPlugin implements Listener {
                 assert target != null;
                 if (target.hasPermission("quacksafety.auth")) {
                     this.getConfig().set("authcodes." + target.getUniqueId(), null);
+                    this.saveConfig();
                     sender.sendMessage(ChatColor.GOLD + "You reset " + target.getName() + "'s authcode");
                     target.sendMessage(ChatColor.RED + "Please rejoin the server due to your authcode being reset!");
                     if (MTD.getTextChannelById("817766659279945780") != null) {
