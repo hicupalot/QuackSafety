@@ -11,7 +11,7 @@ import javax.security.auth.login.LoginException;
 public class Main{
     @SuppressWarnings("unused")
     public static void main(String[] args) throws LoginException, InterruptedException {
-        JDABuilder builder = JDABuilder.createLight(Config.get("token"));
+        JDABuilder builder = JDABuilder.createLight(("token"));
         JDA jda;
         builder.setStatus(OnlineStatus.ONLINE);
         builder.setActivity(Activity.watching("Over Quacktopia"));
