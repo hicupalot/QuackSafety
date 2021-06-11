@@ -16,15 +16,14 @@ public class Config extends JavaPlugin {
         this.token = token;
         this.badstatus = badstatus;
         this.filterchannel = filterchannel;
-
     }
-
     private static final Dotenv dotenv = Dotenv.load();
-
     public static String get(String key) {
         return dotenv.get(key.toUpperCase());
     }
-
+    public String getToken() {
+        return token;
+    }
     public List<String> getAlertNames() {
         return alertnames;
     }
@@ -37,6 +36,10 @@ public class Config extends JavaPlugin {
 
     public void addFilterName(String word) {
         this.alertnames.add(word.toLowerCase());
+        this.saveConfig();
+    }
+    public void addFilterStatus(String word){
+        this.badstatus.add(word.toLowerCase());
         this.saveConfig();
     }
 }
