@@ -1,6 +1,7 @@
 package com.quacktopia.quacksaftey.bot;
 
 import net.dv8tion.jda.api.JDA;
+import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -37,4 +38,5 @@ public class MinecraftToDiscord implements CommandExecutor {
             return false;
         }
     }
+
 

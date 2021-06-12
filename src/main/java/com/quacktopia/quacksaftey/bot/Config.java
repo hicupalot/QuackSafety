@@ -10,6 +10,12 @@ public class Config extends JavaPlugin {
     private final String filterchannel;
     private final List<String> alertnames;
     private final List<String> badstatus;
+    public static final String ADMIN_CHANNEL_ID= "817766659279945780";
+    public static final String SERVER_HELPER_CHANNEL_ID = "812756243957284914";
+    public static final String DISCORD_HELPER_CHANNEL_ID= "758768271066923068";
+    public static final String DISCORD_INAPPROPRIATE_CHECK="Placeholder";
+    public static final String TESTING_SERVER="325893724678782979";
+    public static final String QUACKTOPIA_SERVER="298176792492244992";
 
     public Config(String token, String filterchannel, List<String> alertnames, List<String> badstatus) {
         this.alertnames = alertnames;
