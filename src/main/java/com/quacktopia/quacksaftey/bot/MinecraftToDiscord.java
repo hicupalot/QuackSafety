@@ -27,10 +27,10 @@ public class MinecraftToDiscord implements CommandExecutor {
                     sender.sendMessage(ChatColor.RED + "Please use /staffhelp (message)");
                     return false;
                 }
-                if (MTD.getTextChannelById("812756243957284914") == null) {
+                if (MTD.getTextChannelById(Config.SERVER_HELPER_CHANNEL_ID) == null) {
                     return false;
                 }
-                MTD.getTextChannelById("812756243957284914").sendMessage("HelperHelp: " + sender.getName() + " requires help: " + stb.toString().trim() + "!").queue();
+                MTD.getTextChannelById(Config.SERVER_HELPER_CHANNEL_ID).sendMessage("HelperHelp: " + sender.getName() + " requires help: " + stb.toString().trim() + "!").queue();
             } else {
                 sender.sendMessage(ChatColor.RED + "You do not have permission!");
             }

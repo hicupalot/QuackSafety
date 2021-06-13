@@ -11,7 +11,7 @@ public class DiscordToMinecraft extends ListenerAdapter {
     static JDA MTD;
 
     public void Command(MessageReceivedEvent e) {
-        if (!e.getChannel().getId().equals("812756243957284914") || !e.getChannel().getId().equals("817766659279945780")) {
+        if (!e.getChannel().getId().equals(Config.SERVER_HELPER_CHANNEL_ID) || !e.getChannel().getId().equals(Config.ADMIN_CHANNEL_ID)) {
             e.getMessage().delete().queue();
             return;
         }
@@ -40,7 +40,7 @@ public class DiscordToMinecraft extends ListenerAdapter {
                 if (p.hasPermission("quacksafety.staffhelp")) {
                     p.sendMessage(ChatColor.RED + "[" + ChatColor.YELLOW + "STAFF" + ChatColor.RED + "]: " + ChatColor.LIGHT_PURPLE + "Help Recieved from " + e.getAuthor().getAsTag() + ": " + ChatColor.YELLOW + helpmsg);
                 } else {
-                    if (e.getChannel().getId().equals("812756243957284914") || e.getChannel().getId().equals("817766659279945780")) {
+                    if (e.getChannel().getId().equals(Config.SERVER_HELPER_CHANNEL_ID) || e.getChannel().getId().equals(Config.ADMIN_CHANNEL_ID)) {
                         if (!p.hasPermission("quacksafety.staffhelp")) {
                             e.getMessage().delete().queue();
                             e.getChannel().sendMessage(e.getMember().getAsMention() + "** That Player Is NOT Staff**").queue();

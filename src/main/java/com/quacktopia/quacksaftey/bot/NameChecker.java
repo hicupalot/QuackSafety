@@ -12,7 +12,7 @@ public class NameChecker extends JavaPlugin {
 
     private String matchBannedWords(String texttocheck) {
         String name = texttocheck.toLowerCase();
-        List<String> bannedwords = (List<String>) this.getConfig().getList("alertnames");
+        List<String> bannedwords = (List<String>) this.getConfig().getList("filteredwords");
         assert bannedwords != null;
         for (String s : bannedwords) {
             if (name.contains(s.toLowerCase())) {
@@ -27,6 +27,7 @@ public class NameChecker extends JavaPlugin {
         String match = matchBannedWords(name);
         if (match != null) {
             MTD.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
+            MTD.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
         }
     }
 @SuppressWarnings("unused")
@@ -38,6 +39,7 @@ public class NameChecker extends JavaPlugin {
         String match = matchBannedWords(name);
         if (match != null) {
             MTD.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
+            MTD.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
         }
     }
 @SuppressWarnings("unused")
@@ -46,6 +48,7 @@ public class NameChecker extends JavaPlugin {
         String match = matchBannedWords(name);
         if (match != null) {
             MTD.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
+            MTD.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
         }
     }
 }

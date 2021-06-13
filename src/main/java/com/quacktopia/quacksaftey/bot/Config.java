@@ -7,7 +7,6 @@ import java.util.List;
 
 public class Config extends JavaPlugin {
     private final String token;
-    private final String filterchannel;
     private final List<String> alertnames;
     private final List<String> badstatus;
     public static final String ADMIN_CHANNEL_ID= "817766659279945780";
@@ -16,12 +15,11 @@ public class Config extends JavaPlugin {
     public static final String DISCORD_INAPPROPRIATE_CHECK="Placeholder";
     public static final String TESTING_SERVER="325893724678782979";
     public static final String QUACKTOPIA_SERVER="298176792492244992";
-
-    public Config(String token, String filterchannel, List<String> alertnames, List<String> badstatus) {
+    public static final String TESTING_STATUS_CHANNEL="853294626680078337";
+    public Config(String token, List<String> alertnames, List<String> badstatus) {
         this.alertnames = alertnames;
         this.token = token;
         this.badstatus = badstatus;
-        this.filterchannel = filterchannel;
     }
     private static final Dotenv dotenv = Dotenv.load();
     public static String get(String key) {
@@ -32,9 +30,6 @@ public class Config extends JavaPlugin {
     }
     public List<String> getAlertNames() {
         return alertnames;
-    }
-    public String getFilterchannel(){
-        return filterchannel;
     }
     public List<String> getBadstatus(){
         return badstatus;

@@ -20,13 +20,15 @@ public class StatusChecker extends JavaPlugin {
                 for (Activity status : member.getActivities()) {
                     if (status.getType() == Activity.ActivityType.CUSTOM_STATUS) {
                         String Status = status.getName();
-                        List<String> bannedwords = (List<String>) this.getConfig().getList("badstatus");
+                        List<String> bannedwords = (List<String>) this.getConfig().getList("filteredwords");
                         if (StatusCache.containsKey(member.getId()) && StatusCache.get(member.getId()).equals(status)) {
                             return;
                         }
                         for (String s : Status.split(" ")) {
+                            assert bannedwords!=null;
                             if (bannedwords.contains(s.toLowerCase())) {
                                 MTD.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
+                                MTD.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
                                 StatusCache.put(member.getId(), Status);
                             }
                         }
@@ -36,4 +38,5 @@ public class StatusChecker extends JavaPlugin {
         }, 10, 30, TimeUnit.SECONDS);
     }
 }
+
 
