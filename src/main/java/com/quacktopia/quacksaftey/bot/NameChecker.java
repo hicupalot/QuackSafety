@@ -1,5 +1,6 @@
 package com.quacktopia.quacksaftey.bot;
 
+import com.quacktopia.quacksaftey.QuackSaftey;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.guild.member.update.GuildMemberUpdateNicknameEvent;
