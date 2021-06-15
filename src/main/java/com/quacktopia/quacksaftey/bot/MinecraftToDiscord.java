@@ -9,8 +9,6 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 public class MinecraftToDiscord implements CommandExecutor {
-    static JDA MTD;
-
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         if (sender instanceof Player) {
             final StringBuilder stb = new StringBuilder();
@@ -27,10 +25,10 @@ public class MinecraftToDiscord implements CommandExecutor {
                     sender.sendMessage(ChatColor.RED + "Please use /staffhelp (message)");
                     return false;
                 }
-                if (MTD.getTextChannelById(Config.SERVER_HELPER_CHANNEL_ID) == null) {
+                if (Config.Discord.getTextChannelById(Config.SERVER_HELPER_CHANNEL_ID) == null) {
                     return false;
                 }
-                MTD.getTextChannelById(Config.SERVER_HELPER_CHANNEL_ID).sendMessage("HelperHelp: " + sender.getName() + " requires help: " + stb.toString().trim() + "!").queue();
+                Config.Discord.getTextChannelById(Config.SERVER_HELPER_CHANNEL_ID).sendMessage("HelperHelp: " + sender.getName() + " requires help: " + stb.toString().trim() + "!").queue();
             } else {
                 sender.sendMessage(ChatColor.RED + "You do not have permission!");
             }

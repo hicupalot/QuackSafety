@@ -23,7 +23,6 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class GoogleAuth extends JavaPlugin implements Listener {
-    static JDA MTD;
     private ArrayList<UUID> authlocked;
 
     @Override
@@ -170,8 +169,8 @@ public class GoogleAuth extends JavaPlugin implements Listener {
                     this.saveConfig();
                     sender.sendMessage(ChatColor.GOLD + "You reset " + target.getName() + "'s authcode");
                     target.sendMessage(ChatColor.RED + "Please rejoin the server due to your authcode being reset!");
-                    if (MTD.getTextChannelById(Config.ADMIN_CHANNEL_ID) != null) {
-                        MTD.getTextChannelById(Config.ADMIN_CHANNEL_ID).sendMessage(target.getName() + "'s authcode was reset by " + sender.getName()).queue();
+                    if (Config.Discord.getTextChannelById(Config.ADMIN_CHANNEL_ID) != null) {
+                        Config.Discord.getTextChannelById(Config.ADMIN_CHANNEL_ID).sendMessage(target.getName() + "'s authcode was reset by " + sender.getName()).queue();
 
                     }
                 }

@@ -8,8 +8,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 
 public class DiscordToMinecraft extends ListenerAdapter {
-    static JDA MTD;
-
     public void Command(MessageReceivedEvent e) {
         if (!e.getChannel().getId().equals(Config.SERVER_HELPER_CHANNEL_ID) || !e.getChannel().getId().equals(Config.ADMIN_CHANNEL_ID)) {
             e.getMessage().delete().queue();

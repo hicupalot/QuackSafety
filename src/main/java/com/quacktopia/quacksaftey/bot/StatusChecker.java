@@ -12,11 +12,9 @@ import java.util.concurrent.TimeUnit;
 
 public class StatusChecker extends JavaPlugin {
     private final HashMap<String, String> StatusCache = new HashMap<String, String>();
-    static JDA MTD;
-
     private void StatusCheck() {
         Executors.newScheduledThreadPool(1).scheduleWithFixedDelay(() -> {
-            for (Member member : MTD.getGuildById(Config.QUACKTOPIA_SERVER).getMembers()) {
+            for (Member member : Config.Discord.getGuildById(Config.QUACKTOPIA_SERVER).getMembers()) {
                 for (Activity status : member.getActivities()) {
                     if (status.getType() == Activity.ActivityType.CUSTOM_STATUS) {
                         String Status = status.getName();
@@ -27,8 +25,8 @@ public class StatusChecker extends JavaPlugin {
                         for (String s : Status.split(" ")) {
                             assert bannedwords!=null;
                             if (bannedwords.contains(s.toLowerCase())) {
-                                MTD.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
-                                MTD.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
+                                Config.Discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
+                                Config.Discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
                                 StatusCache.put(member.getId(), Status);
                             }
                         }

@@ -46,6 +46,7 @@ public final class QuackSaftey extends JavaPlugin {
 
     @Override
     public void onDisable() {
+        this.saveDefaultConfig();
         System.out.println(ChatColor.RED + "[QuackSaftey] QuackSaftey plugin shutting down");
     }
 }
