@@ -3,7 +3,6 @@ package com.quacktopia.quacksaftey.bot;
 import com.quacktopia.quacksaftey.QuackSaftey;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 
 public class AddFilteredWords extends ListenerAdapter {
     static QuackSaftey plugin;

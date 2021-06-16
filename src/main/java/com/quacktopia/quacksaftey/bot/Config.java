@@ -1,13 +1,20 @@
 package com.quacktopia.quacksaftey.bot;
 
+import com.quacktopia.quacksaftey.QuackSaftey;
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
-import net.dv8tion.jda.api.requests.restaction.CommandListUpdateAction;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
 
-public class Config extends JavaPlugin {
+public class Config {
+    public static QuackSaftey plugin;
+
+    public Config(QuackSaftey instance, String token, List<String> filteredwords) {
+        plugin = instance;
+        this.token = token;
+        this.filteredwords = filteredwords;
+    }
     //------------------------------------------------------------------------------------
     private final String token;
     private final List<String> filteredwords;
@@ -26,6 +33,7 @@ public class Config extends JavaPlugin {
     public static final String QUACK_DISC_ADMIN_ID = "759818242726035466";
     public static final String QT_STAFF_COMMANDS_CHANNEL = "736633672949825591";
     public static final String STAMPY_COMMANDS_CHANNEL = "729413192673132686";
+    public static final String STAMPY_LOGGING_CHANNEL="839598667236900945";
     public static JDA Discord;
 //-------------------------------------------------------------------------------------
     public Config(String token, List<String> filteredwords) {

@@ -10,14 +10,14 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 import javax.security.auth.login.LoginException;
 
 public class Main{
-    static QuackSaftey plugin;
+    public static QuackSaftey plugin;
     public Main(QuackSaftey instance) {
         plugin = instance;
     }
     @SuppressWarnings("unused")
     public static void main(String[] args) throws LoginException, InterruptedException {
-    String BotToken = plugin.getConfig().getString("token");
-        JDA jda = JDABuilder.createLight(BotToken).setStatus(OnlineStatus.ONLINE).setActivity(Activity.watching("Over Quacktopia"))
+    String token = plugin.getConfig().getString("token");
+        JDA jda = JDABuilder.createLight(token).setStatus(OnlineStatus.ONLINE).setActivity(Activity.watching("Over Quacktopia"))
                 .enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_PRESENCES).build().awaitReady();
         jda.upsertCommand("helpreply", "Reply to the Helper who requested help!").queue();
         jda.addEventListener(new StatusChecker());

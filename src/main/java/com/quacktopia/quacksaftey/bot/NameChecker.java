@@ -1,4 +1,5 @@
 package com.quacktopia.quacksaftey.bot;
+import com.quacktopia.quacksaftey.QuackSaftey;
 import net.dv8tion.jda.api.events.guild.member.GuildMemberJoinEvent;
 import net.dv8tion.jda.api.events.guild.member.update.GuildMemberUpdateNicknameEvent;
 import net.dv8tion.jda.api.events.user.update.UserUpdateNameEvent;
@@ -6,10 +7,20 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
 
-public class NameChecker extends JavaPlugin {
+public class NameChecker {
+    public static QuackSaftey plugin;
+
+    public NameChecker(QuackSaftey instance) {
+        plugin = instance;
+    }
+
+    public NameChecker() {
+
+    }
+
     private String matchBannedWords(String texttocheck) {
         String name = texttocheck.toLowerCase();
-        List<String> bannedwords = (List<String>) this.getConfig().getList("filteredwords");
+        List<String> bannedwords = (List<String>) plugin.getConfig().getList("filteredwords");
         assert bannedwords != null;
         for (String s : bannedwords) {
             if (name.contains(s.toLowerCase())) {
@@ -25,6 +36,7 @@ public class NameChecker extends JavaPlugin {
         if (match != null) {
             Config.Discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
             Config.Discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
+            Config.Discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
         }
     }
 @SuppressWarnings("unused")
@@ -37,6 +49,7 @@ public class NameChecker extends JavaPlugin {
         if (match != null) {
             Config.Discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
             Config.Discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
+            Config.Discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
         }
     }
 @SuppressWarnings("unused")
@@ -46,6 +59,7 @@ public class NameChecker extends JavaPlugin {
         if (match != null) {
             Config.Discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
             Config.Discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
+            Config.Discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
         }
     }
 }
