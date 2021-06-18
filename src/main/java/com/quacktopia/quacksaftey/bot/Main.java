@@ -34,7 +34,7 @@ public class Main {
         JDA jda = JDABuilder.createLight(token).setStatus(OnlineStatus.ONLINE).setActivity(Activity.watching("Over Quacktopia"))
                 .enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_PRESENCES).build().awaitReady();
         jda.addEventListener(new StatusChecker());
-        jda.addEventListener(new DiscordToMinecraft());
+        jda.addEventListener(new DiscordToMinecraft(main));
         jda.addEventListener(new NameChecker());
         jda.addEventListener(new AvatarChecker());
         this.commandManager = new CommandManager(this);
