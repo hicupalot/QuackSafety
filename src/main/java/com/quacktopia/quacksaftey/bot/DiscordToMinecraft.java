@@ -12,7 +12,7 @@ import org.bukkit.entity.Player;
 
 public class DiscordToMinecraft extends DiscordCommand {
     public DiscordToMinecraft(Main main) {
-        super(main, "helperhelp", Config.plugin.getConfig().getString("adminrole"));
+        super(main, "helperhelp", Config.plugin.getConfig().getString("quackhelper"));
     }
     @Override
     public void onCommand(SlashCommandEvent e) {

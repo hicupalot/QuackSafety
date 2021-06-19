@@ -22,17 +22,13 @@ import java.util.ArrayList;
 import java.util.UUID;
 
 public class GoogleAuth implements Listener {
-    public static QuackSaftey plugin;
-    public GoogleAuth(QuackSaftey instance) {
-        plugin = instance;
-    }
     private ArrayList<UUID> authlocked;
 
     public void onEnable() {
         authlocked = new ArrayList<>();
 
-        plugin.getConfig().options().copyDefaults(true);
-        plugin.saveConfig();
+        Config.plugin.getConfig().options().copyDefaults(true);
+        Config.plugin.saveConfig();
     }
 
     @SuppressWarnings("unused")
@@ -48,13 +44,13 @@ public class GoogleAuth implements Listener {
         }
         if (e.getPlayer().hasPermission("quacksafety.auth")){
             Player player = e.getPlayer();
-            if (!plugin.getConfig().contains("authcodes." + player.getUniqueId())) {
+            if (!Config.plugin.getConfig().contains("authcodes." + player.getUniqueId())) {
                 GoogleAuthenticator gAuth = new GoogleAuthenticator();
                 GoogleAuthenticatorKey gkey = gAuth.createCredentials();
                 player.sendMessage(ChatColor.GOLD + "Your Google Auth Code is " + gkey.getKey());
                 player.sendMessage(ChatColor.BLUE + "Please enter this code in the Google Authenticator App BEFORE you leave the server");
-                plugin.getConfig().set("authcodes." + player.getUniqueId(), gkey.getKey());
-                plugin.saveConfig();
+                Config.plugin.getConfig().set("authcodes." + player.getUniqueId(), gkey.getKey());
+                Config.plugin.saveConfig();
             } else {
                 authlocked.add(player.getUniqueId());
                 player.sendMessage(ChatColor.RED + "Please enter the code found in the Google Authenticator App!");
@@ -67,7 +63,7 @@ public class GoogleAuth implements Listener {
     }
 
     private boolean playerInputCode(Player player, int code) {
-        String secretkey = plugin.getConfig().getString("authcodes." + player.getUniqueId());
+        String secretkey = Config.plugin.getConfig().getString("authcodes." + player.getUniqueId());
 
         GoogleAuthenticator gAuth = new GoogleAuthenticator();
         assert secretkey != null;
@@ -167,8 +163,8 @@ public class GoogleAuth implements Listener {
                 Player target = Bukkit.getServer().getPlayer(args[1]);
                 assert target != null;
                 if (target.hasPermission("quacksafety.auth")) {
-                    plugin.getConfig().set("authcodes." + target.getUniqueId(), null);
-                    plugin.saveConfig();
+                    Config.plugin.getConfig().set("authcodes." + target.getUniqueId(), null);
+                    Config.plugin.saveConfig();
                     sender.sendMessage(ChatColor.GOLD + "You reset " + target.getName() + "'s authcode");
                     target.sendMessage(ChatColor.RED + "Please rejoin the server due to your authcode being reset!");
                     if (Config.Discord.getTextChannelById(Config.ADMIN_CHANNEL_ID) != null) {

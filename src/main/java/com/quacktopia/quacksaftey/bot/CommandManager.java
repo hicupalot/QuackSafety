@@ -31,7 +31,7 @@ public class CommandManager extends ListenerAdapter {
        commands.add(new DiscordToMinecraft(main));
         CommandListUpdateAction commandUpdateAction = Config.Discord.updateCommands();
         for (DiscordCommand discordCommand : commands) {
-            commandUpdateAction.addCommands(discordCommand.buildCommand());
+            commandUpdateAction.addCommands(discordCommand.buildCommand()).queue();
         }
         commandUpdateAction.queue();
 
