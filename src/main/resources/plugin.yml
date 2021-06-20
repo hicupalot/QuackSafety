@@ -1,7 +1,7 @@
 name: QuackSafety
 version: ${project.version}
 main: com.quacktopia.quacksaftey.QuackSaftey
-api-version: 1.16
+api-version: 1.17
 authors: [hicupalot]
 softdepend:
   - LuckPerms
