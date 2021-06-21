@@ -3,20 +3,17 @@ package com.quacktopia.quacksaftey.bot;
 import com.quacktopia.quacksaftey.QuackSaftey;
 import io.github.cdimascio.dotenv.Dotenv;
 import net.dv8tion.jda.api.JDA;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.List;
 
 public class Config {
     public static QuackSaftey plugin;
 
-    public Config(QuackSaftey instance, String token, List<String> filteredwords) {
+    public Config(QuackSaftey instance, List<String> filteredwords) {
         plugin = instance;
-        this.token = token;
         this.filteredwords = filteredwords;
     }
     //------------------------------------------------------------------------------------
-    private final String token;
     private final List<String> filteredwords;
     public static final String ADMIN_CHANNEL_ID = "817766659279945780";
     public static final String SERVER_HELPER_CHANNEL_ID = "812756243957284914";
@@ -38,7 +35,6 @@ public class Config {
 //-------------------------------------------------------------------------------------
     public Config(String token, List<String> filteredwords) {
         this.filteredwords = filteredwords;
-        this.token = token;
     }
 
     private static final Dotenv dotenv = Dotenv.load();
@@ -46,11 +42,6 @@ public class Config {
     public static String get(String key) {
         return dotenv.get(key.toUpperCase());
     }
-
-    public String getToken() {
-        return token;
-    }
-
     public List<String> getAlertNames() {
         return filteredwords;
     }

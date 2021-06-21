@@ -1,10 +1,7 @@
 package com.quacktopia.quacksaftey.bot;
 
-import com.quacktopia.quacksaftey.QuackSaftey;
-import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.entities.Member;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.HashMap;
 import java.util.List;
@@ -12,14 +9,13 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 public class StatusChecker {
-    public static QuackSaftey plugin;
-    public StatusChecker(QuackSaftey instance) {
-        plugin = instance;
-    }
-    private final HashMap<String, String> StatusCache = new HashMap<String, String>();
+    private static Main main;
+    private final HashMap<String, String> StatusCache;
 
-    public StatusChecker() {
-
+    public StatusChecker(Main main) {
+            this.main = main;
+            this.StatusCache = new HashMap<>();
+            StatusCheck();
     }
 
     private void StatusCheck() {
@@ -28,7 +24,7 @@ public class StatusChecker {
                 for (Activity status : member.getActivities()) {
                     if (status.getType() == Activity.ActivityType.CUSTOM_STATUS) {
                         String Status = status.getName();
-                        List<String> bannedwords = (List<String>) plugin.getConfig().getList("filteredwords");
+                        List<String> bannedwords = (List<String>) Config.plugin.getConfig().getList("filteredwords");
                         if (StatusCache.containsKey(member.getId()) && StatusCache.get(member.getId()).equals(status)) {
                             return;
                         }

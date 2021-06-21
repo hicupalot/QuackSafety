@@ -8,19 +8,18 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.util.List;
 
 public class NameChecker {
-    public static QuackSaftey plugin;
-
-    public NameChecker(QuackSaftey instance) {
-        plugin = instance;
-    }
-
-    public NameChecker() {
+    private static Main main;
+    public NameChecker(Main main) {
+        this.main = main;
+        NameCheck();
 
     }
 
+    private void NameCheck() {
+    }
     private String matchBannedWords(String texttocheck) {
         String name = texttocheck.toLowerCase();
-        List<String> bannedwords = (List<String>) plugin.getConfig().getList("filteredwords");
+        List<String> bannedwords = (List<String>) Config.plugin.getConfig().getList("filteredwords");
         assert bannedwords != null;
         for (String s : bannedwords) {
             if (name.contains(s.toLowerCase())) {
