@@ -8,10 +8,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.event.player.PlayerKickEvent;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class ToggleGoogleAuth implements CommandExecutor {
     @SuppressWarnings("deprecation")
@@ -23,7 +19,7 @@ public class ToggleGoogleAuth implements CommandExecutor {
                 for (Player Staff : Bukkit.getOnlinePlayers()) {
                     if (Staff.hasPermission("quacksafety.auth")) {
                         Staff.kickPlayer("You have been kicked as Google Authentication has been enabled!");
-                        Config.Discord.getTextChannelById(Config.ADMIN_CHANNEL_ID).sendMessage("Google Authentication has been enabled!").queue();
+                        Config.discord.getTextChannelById(Config.ADMIN_CHANNEL_ID).sendMessage("Google Authentication has been enabled!").queue();
                     }
                     else {
                         sender.sendMessage(ChatColor.RED+"You do not have permission to do that!");

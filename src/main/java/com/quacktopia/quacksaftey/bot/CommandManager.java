@@ -29,7 +29,7 @@ public class CommandManager extends ListenerAdapter {
        commands.add(new AddFilteredWords(main));
        commands.add(new RemoveFilteredWords(main));
        commands.add(new DiscordToMinecraft(main));
-        CommandListUpdateAction commandUpdateAction = Config.Discord.updateCommands();
+        CommandListUpdateAction commandUpdateAction = Config.discord.updateCommands();
         for (DiscordCommand discordCommand : commands) {
             commandUpdateAction.addCommands(discordCommand.buildCommand()).queue();
         }

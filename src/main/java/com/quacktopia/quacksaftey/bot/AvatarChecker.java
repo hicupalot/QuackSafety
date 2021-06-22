@@ -15,9 +15,9 @@ public class AvatarChecker {
             if (!e.getNewAvatarId().equals(e.getOldAvatarUrl())) {
                 assert (e.getNewAvatarUrl() != null);
                 assert (e.getOldAvatarUrl() != null);
-                Config.Discord.getTextChannelById(Config.LOGGING_CHANNEL).sendMessage(e.getUser().getName() + " just changed their profile picture " + e.getNewAvatarUrl()).queue();
-                Config.Discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(e.getUser().getName() + " just changed their profile picture " + e.getNewAvatarUrl()).queue();
-                Config.Discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(e.getUser().getName() + " just changed their profile picture " + e.getNewAvatarUrl()).queue();
+                Config.discord.getTextChannelById(Config.LOGGING_CHANNEL).sendMessage(e.getUser().getName() + " just changed their profile picture " + e.getNewAvatarUrl()).queue();
+                Config.discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(e.getUser().getName() + " just changed their profile picture " + e.getNewAvatarUrl()).queue();
+                Config.discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(e.getUser().getName() + " just changed their profile picture " + e.getNewAvatarUrl()).queue();
             }
         }
     }

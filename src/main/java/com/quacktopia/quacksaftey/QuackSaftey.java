@@ -1,5 +1,6 @@
 package com.quacktopia.quacksaftey;
 
+import com.quacktopia.quacksaftey.authentication.ToggleGoogleAuth;
 import com.quacktopia.quacksaftey.bot.MinecraftToDiscord;
 import com.quacktopia.quacksaftey.commands.*;
 import com.quacktopia.quacksaftey.inhibitors.*;
@@ -28,6 +29,7 @@ public final class QuackSaftey extends JavaPlugin {
         getCommand("staffhelp").setExecutor(new MinecraftToDiscord());
         getCommand("PlotPlayers").setExecutor(new PlotPlayers());
         getCommand("PermCheck").setExecutor(new QuackSafetyPermCheck());
+        getCommand("toggleauth").setExecutor(new ToggleGoogleAuth());
         System.out.println(ChatColor.GOLD + "[QuackSafety] Commands Loaded");
         getServer().getPluginManager().registerEvents(new ProjectileInhibitor(), this);
         getServer().getPluginManager().registerEvents(new PrimedTNTBlocker(), this);

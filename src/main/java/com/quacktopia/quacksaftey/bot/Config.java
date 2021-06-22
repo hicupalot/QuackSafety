@@ -31,7 +31,7 @@ public class Config {
     public static final String QT_STAFF_COMMANDS_CHANNEL = "736633672949825591";
     public static final String STAMPY_COMMANDS_CHANNEL = "729413192673132686";
     public static final String STAMPY_LOGGING_CHANNEL="839598667236900945";
-    public static JDA Discord;
+    public static JDA discord;
 //-------------------------------------------------------------------------------------
     public Config(String token, List<String> filteredwords) {
         this.filteredwords = filteredwords;

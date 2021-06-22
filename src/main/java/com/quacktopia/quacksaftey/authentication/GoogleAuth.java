@@ -1,6 +1,5 @@
 package com.quacktopia.quacksaftey.authentication;
 
-import com.quacktopia.quacksaftey.QuackSaftey;
 import com.quacktopia.quacksaftey.bot.Config;
 import com.warrenstrange.googleauth.GoogleAuthenticator;
 import com.warrenstrange.googleauth.GoogleAuthenticatorKey;
@@ -168,8 +167,8 @@ public class GoogleAuth implements Listener {
                     Config.plugin.saveConfig();
                     sender.sendMessage(ChatColor.GOLD + "You reset " + target.getName() + "'s authcode");
                     target.sendMessage(ChatColor.RED + "Please rejoin the server due to your authcode being reset!");
-                    if (Config.Discord.getTextChannelById(Config.ADMIN_CHANNEL_ID) != null) {
-                        Config.Discord.getTextChannelById(Config.ADMIN_CHANNEL_ID).sendMessage(target.getName() + "'s authcode was reset by " + sender.getName()).queue();
+                    if (Config.discord.getTextChannelById(Config.ADMIN_CHANNEL_ID) != null) {
+                        Config.discord.getTextChannelById(Config.ADMIN_CHANNEL_ID).sendMessage(target.getName() + "'s authcode was reset by " + sender.getName()).queue();
 
                     }
                 }

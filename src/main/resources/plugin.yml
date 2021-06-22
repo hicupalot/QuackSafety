@@ -57,6 +57,10 @@ commands:
   PermCheck:
     description: Checks if YOU messed up or your Permissions Handler Messed up!
     usage: /permcheck
+  toggleauth:
+    description: Enables Google Authentication
+    usage: /toggleauth
+    permission: quacksafety.adminauth
   permissions:
     quacksafety.speedingticket:
          descritpion: 'Lets you see the broadcast of speeding players'

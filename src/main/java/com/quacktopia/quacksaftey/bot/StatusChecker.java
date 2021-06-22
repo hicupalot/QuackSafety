@@ -20,7 +20,7 @@ public class StatusChecker {
 
     private void StatusCheck() {
         Executors.newScheduledThreadPool(1).scheduleWithFixedDelay(() -> {
-            for (Member member : Config.Discord.getGuildById(Config.QUACKTOPIA_SERVER).getMembers()) {
+            for (Member member : Config.discord.getGuildById(Config.QUACKTOPIA_SERVER).getMembers()) {
                 for (Activity status : member.getActivities()) {
                     if (status.getType() == Activity.ActivityType.CUSTOM_STATUS) {
                         String Status = status.getName();
@@ -31,9 +31,9 @@ public class StatusChecker {
                         for (String s : Status.split(" ")) {
                             assert bannedwords!=null;
                             if (bannedwords.contains(s.toLowerCase())) {
-                                Config.Discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
-                                Config.Discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
-                                Config.Discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
+                                Config.discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
+                                Config.discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
+                                Config.discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(member.getEffectiveName() + " may have an inappropriate status:" + Status + " their discord id is " + member.getId());
                                 StatusCache.put(member.getId(), Status);
                             }
                         }

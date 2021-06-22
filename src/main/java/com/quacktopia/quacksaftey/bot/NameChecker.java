@@ -33,9 +33,9 @@ public class NameChecker {
         String name = e.getMember().getEffectiveName().toLowerCase();
         String match = matchBannedWords(name);
         if (match != null) {
-            Config.Discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
-            Config.Discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
-            Config.Discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
+            Config.discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
+            Config.discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
+            Config.discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(name + " is possibly inappropriate. CONTAINS: " + match + " their discord id is" + e.getMember().getId()).queue();
         }
     }
 @SuppressWarnings("unused")
@@ -46,9 +46,9 @@ public class NameChecker {
         String name = e.getNewNickname().toLowerCase();
         String match = matchBannedWords(name);
         if (match != null) {
-            Config.Discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
-            Config.Discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
-            Config.Discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
+            Config.discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
+            Config.discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
+            Config.discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(e.getMember().getEffectiveName() + "'s nickname is " + name + " this is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getMember().getId()).queue();
         }
     }
 @SuppressWarnings("unused")
@@ -56,9 +56,9 @@ public class NameChecker {
         String name = e.getNewName().toLowerCase();
         String match = matchBannedWords(name);
         if (match != null) {
-            Config.Discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
-            Config.Discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
-            Config.Discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
+            Config.discord.getTextChannelById(Config.DISCORD_INAPPROPRIATE_CHECK).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
+            Config.discord.getTextChannelById(Config.TESTING_STATUS_CHANNEL).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
+            Config.discord.getTextChannelById(Config.STAMPY_LOGGING_CHANNEL).sendMessage(e.getNewName() + " is possibly inappropriate CONTAINS: " + match + " their discord id is " + e.getUser().getId()).queue();
         }
     }
 }
