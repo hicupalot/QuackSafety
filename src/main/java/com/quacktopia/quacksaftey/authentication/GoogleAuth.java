@@ -38,6 +38,7 @@ public class GoogleAuth implements Listener {
 
     @EventHandler
     public void Joining(PlayerJoinEvent e) {
+        if (Config.plugin.getConfig().getBoolean("GoogleAuth"))
         if (!e.getPlayer().hasPermission("quacksafety.auth")) {
             authlocked.remove(e.getPlayer().getUniqueId());
             return;
