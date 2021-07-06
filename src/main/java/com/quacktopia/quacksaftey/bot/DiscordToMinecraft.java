@@ -33,6 +33,6 @@ public class DiscordToMinecraft extends DiscordCommand {
                     public CommandData buildCommand () {
                         return new CommandData("helperhelp", "Reply to a Helper who needs help")
                                 .addOption(OptionType.STRING, "Username", "The Helper who Needs Help", true)
-                                .addOption(OptionType.STRING,"Message","The messgae reply to send to the helper who needs help",true);
+                                .addOption(OptionType.STRING,"Message","The message reply to send to the helper who needs help",true);
                     }
                 }

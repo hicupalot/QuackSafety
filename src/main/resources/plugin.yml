@@ -104,3 +104,6 @@ commands:
     quacksafety.staff:
       description: "Generic Staff Perms"
       default: op
+    quacksafety.reload:
+      description: "Reload the config"
+      default: op

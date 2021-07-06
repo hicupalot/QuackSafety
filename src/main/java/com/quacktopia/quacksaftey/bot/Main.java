@@ -33,14 +33,7 @@ public class Main {
         new StatusChecker(this);
         new NameChecker(this);
         new AvatarChecker(this);
-        if (jda.getGuildById(Config.QUACKTOPIA_SERVER) == null) {
-            if (jda.getGuildById(Config.TESTING_SERVER) == null) {
-                System.out.println("This is a private Bot! The Bot has shut down for safety reasons! If this is a mistake please contact an Admin");
-                System.exit(39715);
-            }
         }
-    }
-
     public CommandManager getCommandManager() {
         return commandManager;
     }
