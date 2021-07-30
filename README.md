@@ -1,1 +1,1 @@
-Keeping Quacktopia Safe! This is a private plugin for Quacktopia!
+Keeping Quacktopia Safe! This is a plugin for Quacktopia!
