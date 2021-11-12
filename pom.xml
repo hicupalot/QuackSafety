@@ -105,7 +105,7 @@
         <dependency>
             <groupId>com.plotsquared</groupId>
             <artifactId>PlotSquared-Core</artifactId>
-            <version>5.13.11</version>
+            <version>6.1.4</version>
         </dependency>
         <dependency>
             <groupId>com.gitlab.ruany</groupId>
